@@ -1,6 +1,52 @@
-Resultatde la commande **ifconfig** avant la configuration
+**Phalavandishvili Demetre - Felix Jamet**
+
+# TP1 - Réseaux & Télécoms
+
+## BIlan de Travaux pratiques  1
+
+### Modele OSI
+
+ Le modèle OSI est un modèlethéorique permettant de décrire le fonctionnement d'un réseau. Ils'agit de sept couches empilées de sorte à ce que chaque couchefourni un service à la couche du dessus en s'appuyant sur le servicerendu par la couche du dessous. Parmi ces 7 couches on distingue deuxtype des couches: haute et materielles. 
+
+| **Couches Hautes**        | **Description**                          |
+| ------------------------- | ---------------------------------------- |
+| 7. Application            | Point d'accès aux				services réseaux    |
+| 6. Présentation           | Permet de convertir				les données machine en données qui permet aux autres machines				d'utiliser |
+| 5. Session                |                                          |
+| 4. Transport              | Permet de transporter les données et se charge que les données sont bien				reçu |
+| **Couches			Matérielles** |                                          |
+| 3. Réseau                 |                                          |
+| 2. Liaison                |                                          |
+| 1. Physique               |                                          |
+
+Permet de convertr les donnéesmachine en données qui sera utilisable par n'importe quelle machine;Permet aussi decodage et encodage des données
+
+Pour permettre à deux "entités"de communiquer, chaque couche ajoute un entête aux données fourniespar la couche du dessus. Une fois arrivé à la couche physique, lesdonnées sont transmises au destinataire et les entêtes sontinterprétés par les couches sucessives, fournissant à la couchesupérieure les données envoyées par la couche équivalente del'émetteur. Ce mécanisme permet donc de créer un lien virtuelentre les couches. 
 
 
+
+## Modèle TCP/IP
+
+   Le modèle OSI n'étant qu'un concept, les protocoles de communication ne suivent pas strictement les règles établies par OSI.
+Le protocole nous intéressant, TCP/IP n'utilise que quatre couches : application, tpc, ip et physique.
+
+   TCP est le protocole de transport. Le rôle principal du protocole IP est d'assurer le routage des paquets. Le routage des paquets est la procédure permettant à deux ordinateurs distants d'échanger des paquets s'ils ne font pas parti du même réseau local. Pour pouvoir communiquer en dehors du réseau local, les paquets doivent transiter par une passerelle qui est chargée de transmettre les paquets vers l'extérieur.
+
+
+
+### Adresse IP  & adresse MAC
+
+   L'adresse IP est une adresse logique permettant d'identifier une machine dans un réseau. Il existe plusieurs formats d'adresse ip, chacune ayant un certain nombre de bits destiné à identifier le réseau et un certain nombre de bits identifiant la machine.
+
+   Une adresse MAC permet d'identifier de manière unique (théoriquement) une carte réseau. Une adresse MAC est constituée de six octets, généralement représentés de la manière suivante : XX:XX:XX:YY:YY:YY. Les X permettent d'identifier le fabriquant du matériel.
+
+
+
+
+
+## Manipuation réalisée sur la machine
+
+Resultat de la commande **ifconfig** avant la configuration :
 
 ```
 lo       Link encap:Boucle locale
@@ -48,8 +94,6 @@ lo       Link encap:Boucle locale
 
 ```
 Table de routage IP du noyau 
-
 Destination    Passerelle      Genmask         Indic Metric Ref    Use  Iface 
 192.168.0.0    *               255.255.255.0   U     0      0        0  eth0 
-
 ```
