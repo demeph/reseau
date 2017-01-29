@@ -154,18 +154,19 @@ ff02::3 ip6-allhosts
 ```
 
 On applique la même demarche pour chaque machine
-Dans la machine 2, on ajoute:
+Dans le fichier *hosts* de la machine 2, on ajoute:
+```
 192.168.1.1 m1 machine1
 192.168.1.3 m3 machine3
+```
 
-Dans la machine 3, on ajoute:
+Dans le fichier *hosts* de  la machine 3, on ajoute:
 192.168.1.1 m1 machine1
 192.168.1.2 m2 machine2
 
-Testons nos modifications effectuer en utilisant l'option -c de la commande *ping* :
-à patir la machine 1 
-vers la machine 2:
+Test des modification effectuées :
 
+  - machine 1 $\rightarrow$ machine 2
 ```
 ping -c 2 m2
 PING m2 (192.168.1.2) 56(84) bytes of data.
@@ -177,8 +178,7 @@ PING m2 (192.168.1.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.524/0.987/1.451/0.464 ms
 ```
 
-vers la machine 3:
-
+  - machine 1 $\rightarrow$ machine 3
 ```
 ping -c 2 m3
 PING m3 (192.168.1.3) 56(84) bytes of data.
@@ -190,9 +190,7 @@ PING m3 (192.168.1.3) 56(84) bytes of data.
 rtt min/avg/max/mdev = 1.068/1.190/1.313/0.127 ms
 ```
 
-à partir la machine 2
-vers la machine m1:
-
+  - machine 2 $\rightarrow$ machine 1
 ```
 ping -c 2 m1
 PING m1 (192.168.1.1) 56(84) bytes of data.
@@ -204,8 +202,7 @@ PING m1 (192.168.1.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.603/10.926/21.249/10.323 ms
 ```
 
-vers la machine 3:
-
+  - machine 2 $\rightarrow$ machine 3
 ```
 ping -c 2 m3
 PING m3 (192.168.1.3) 56(84) bytes of data.
@@ -217,9 +214,7 @@ PING m3 (192.168.1.3) 56(84) bytes of data.
 rtt min/avg/max/mdev = 1.550/11.393/21.237/9.844 ms
 ```
 
-à partir de la machine m3
-vers la machine m1:
-
+  - machine 3 $\rightarrow$ machine 1
 ```
 ping -c 2  m1
 PING m1 (192.168.1.1) 56(84) bytes of data.
@@ -231,8 +226,7 @@ PING m1 (192.168.1.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.700/11.415/22.131/10.716 ms
 ```
 
-vers la machine m2 :
-
+  - machine 3 $\rightarrow$ machine 2
 ```
 ping -c 2  m2
 PING m2 (192.168.1.2) 56(84) bytes of data.
