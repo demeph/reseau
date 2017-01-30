@@ -225,7 +225,7 @@ PING m1 (192.168.1.1) 56(84) bytes of data.
 2 packets transmitted, 2 received, 0% packet loss, time 1017ms
 rtt min/avg/max/mdev = 0.700/11.415/22.131/10.716 ms
 ```
-
+root
   - machine 3 $\rightarrow$ machine 2
 ```
 ping -c 2  m2
@@ -240,3 +240,55 @@ rtt min/avg/max/mdev = 1.146/1.402/1.658/0.256 ms
 
 On remarque que la modification du fichier *hosts* nous permet bien d'associer un identifiant à une adresse.
 L'option -c nbRequete de la ping permet definir le nombre de pings que l'on va effectuer.
+
+## ARP (Address Resolution Protocol) ##
+
+après avoir effectué des ping sur m1 et m2, on obtient le résultat suivant:
+```
+$ arp
+  Address                  HWtype  HWaddress           Flags Mask            Iface
+  m3                       ether   02:04:06:E0:EE:F5   C                     eth0
+  m2                       ether   02:04:06:FF:73:C3   C                     eth0
+```
+```
+ $ arp -n
+   Address                  HWtype  HWaddress           Flags Mask            Iface
+   192.168.1.3              ether   02:04:06:E0:EE:F5   C                     eth0
+   192.168.1.2              ether   02:04:06:FF:73:C3   C                     eth0
+```
+
+d'après les commandes ci-dessus, les adresses MAC de m2 et m3 sont respectivement 02:04:06:E0:EE:F5 et 02:04:06:FF:73:C3.
+la commande *ifconfig* sur les machines m2 et m3 donne:
+```
+m2:~# ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:04:06:ff:73:c3  
+          inet addr:192.168.1.2  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::4:6ff:feff:73c3/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:57 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:32 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1760 (1.7 KiB)  TX bytes:1594 (1.5 KiB)
+          Interrupt:5
+```
+```
+m3:~# ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:04:06:e0:ee:f5  
+          inet addr:192.168.1.3  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::4:6ff:fee0:eef5/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:57 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:33 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1760 (1.7 KiB)  TX bytes:1636 (1.5 KiB)
+          Interrupt:5 
+```
+On remarque qu'il y a bien une correspondance entre les adresses MAC données par la table ARP sur m1 et celles données par ifconfig sur m2 et m3.
+
+### Capture de trames ARP ###
+Le type à l'intérieur des trames ethernet de la requête et de la réponse ARP est "ARP (0x0806)"
+
+Le type de la requête et la réponse ICMP est "IP (0x0800)"
+
+## fragmentation ##
+
