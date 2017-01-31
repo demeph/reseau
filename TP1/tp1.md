@@ -39,11 +39,21 @@ Le routage des paquets est la procédure permettant à deux ordinateurs distants
 
 
 
-### Adresse IP  & adresse MAC
+### Adresses IP  & adresses MAC
 
-L'adresse IP est une adresse logique permettant d'identifier une machine dans un réseau. Il existe plusieurs formats d'adresse ip, chacune ayant un certain nombre de bits destiné à identifier le réseau et un certain nombre de bits identifiant la machine.
+L'adresse IP est une adresse logique permettant d'identifier une machine dans un réseau. Il existe plusieurs formats d'adresse ip, chacune ayant un certain nombre de bits destiné à identifier le réseau et un certain nombre de bits identifiant la machine. On identifie 5 différentes classes d'adresses IP :
+| **Classe**								| **Description** 											| **nombre de postes** | **notes** |
+|-|-|-|
+| A | 0RRR.MMMM.MMMM.MMMM | 16 777 214 | |
+| B | 10RR.RRRR.MMMM.MMMM | 65 534 | |
+| C | 110R.RRRR.RRRR.MMMM | 254 | |
+| D | 1110.XXXX.XXXX.XXXX | | utilisé pour les communications multicast |
+| E | 1111.XXXX.XXXX.XXXX | | réservé par l'IANA mais non utilisé |
 
-Une adresse MAC permet d'identifier de manière unique une carte réseau (en théorie). Une adresse MAC est constituée de six octets, généralement représentés de la manière suivante : XX:XX:XX:YY:YY:YY. Les X permettent d'identifier le fabriquant du matériel. Et les Y sont spécifiques à la carte produite
+
+Une adresse MAC permet d'identifier de manière unique une carte réseau (en théorie). Une adresse MAC est constituée de six octets, généralement représentés de la manière suivante : XX:XX:XX:YY:YY:YY.
+Les X permettent d'identifier de manière unique le fabriquant du matériel. On appelle cette partie Organizationally Unique Identifier (OUI).
+Les Y sont spécifiques à la carte produite. Cette partie est désignée par Network interface controller (NIC).
 
 ## Manipulations réalisées sur machine
 
@@ -86,10 +96,64 @@ lo       Link encap:Boucle locale
           RXbytes:52605 (51.3 KiB)  TX bytes:52605 (51.3 KiB) 
 ```
 
+### Routage
+
 Pour avoir la table de routage IP, on utilise la commande Unix **route** et on obtient
 
 ```
 Table de routage IP du noyau 
 Destination    Passerelle      Genmask         Indic Metric Ref    Use  Iface 
 192.168.0.0    *               255.255.255.0   U     0      0        0  eth0 
+```
+
+La commande suivante permet d’établir une connexion avec une autre machine, dans notre cas on a établi la connexion avec la passerelle (bob) :
+
+```
+route add -net 10.0.0.0 netmask 255.255.255.0 gw 192.168.0.254
+```
+
+Après cette manipulation, la commande route donne les lignes suivantes :
+```
+Destination		Passerelle 		Genmask 		Indic	Metric	Ref	Use Iface
+192.168.0.0  	*   			255.255.255.0 	U 		0 		0 	0	eth0
+10.0.0.0		none-5.local	255.255.255.0	UG		0		0	0	eth0
+```
+
+Après avoir établi toutes les connexions, on vérifie qu’on peut se connecter avec les autres machines. Pour cela on utilise la commande ping suivi de l'adresse IP à tester.
+Voici quelques tests réalisés lors des TP :
+
+```
+- ping 10.0.0.7 
+PING 10.0.0.7 (10.0.0.7) 56(84) bytes of data. 
+64 bytes from 10.0.0.7: icmp_req=1 ttl=63 time=0.699 ms 
+64 bytes from 10.0.0.7: icmp_req=2 ttl=63 time=0.690 ms 
+64 bytes from 10.0.0.7: icmp_req=3 ttl=63 time=0.688 ms 
+^C 
+--- 10.0.0.7 ping statistics --- 
+3 packets transmitted, 3 received, 0% packet loss, time 2000ms 
+rtt min/avg/max/mdev = 0.688/0.692/0.699/0.022 ms 
+
+
+- ping 192.168.0.3 
+PING 192.168.0.3 (192.168.0.3) 56(84) bytes of data. 
+64 bytes from 192.168.0.3: icmp_req=1 ttl=64 time=1.38 ms 
+64 bytes from 192.168.0.3: icmp_req=2 ttl=64 time=0.758 ms 
+64 bytes from 192.168.0.3: icmp_req=3 ttl=64 time=0.748 ms 
+64 bytes from 192.168.0.3: icmp_req=4 ttl=64 time=0.754 ms 
+^C 
+--- 192.168.0.3 ping statistics --- 
+4 packets transmitted, 4 received, 0% packet loss, time 3000ms 
+rtt min/avg/max/mdev = 0.748/0.910/1.380/0.271 ms
+```
+
+La commande arp -a  permet de voir l’histoirique de la connexion avec les autres machines :
+
+```
+arp -a 
+none-5.local (192.168.0.254) at 00:12:3f:64:6c:dc [ether] on eth0 
+? (192.168.0.1) at <incomplete> on eth0 
+none-2.local (192.168.0.3) at 00:23:ae:a6:80:40 [ether] on eth0 
+? (192.168.0.4) at <incomplete> on eth0 
+? (192.168.0.5) at <incomplete> on eth0 
+none-6.local (192.168.0.6) at 00:23:ae:a6:7c:8a [ether] on eth0
 ```
