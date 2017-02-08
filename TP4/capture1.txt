@@ -1,0 +1,1553 @@
+No.     Time        Source                Destination           Protocol Info
+      1 0.000000    BbnInter_e3:c4:48     Broadcast             AoE      Query Config Information Request
+
+Frame 1 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet
+
+No.     Time        Source                Destination           Protocol Info
+      2 0.030554    BbnInter_bf:bf:bb     Broadcast             AoE      Query Config Information Request
+
+Frame 2 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet
+
+No.     Time        Source                Destination           Protocol Info
+      3 59.998726   BbnInter_e3:c4:48     Broadcast             AoE      Query Config Information Request
+
+Frame 3 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet
+
+No.     Time        Source                Destination           Protocol Info
+      4 60.030124   BbnInter_bf:bf:bb     Broadcast             AoE      Query Config Information Request
+
+Frame 4 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet
+
+No.     Time        Source                Destination           Protocol Info
+      5 68.964287   BbnInter_bf:bf:bb     Broadcast             ARP      Who has 192.168.1.2?  Tell 192.168.1.1
+
+Frame 5 (42 bytes on wire, 42 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+Address Resolution Protocol (request)
+
+No.     Time        Source                Destination           Protocol Info
+      6 68.964745   BbnInter_e3:c4:48     BbnInter_bf:bf:bb     ARP      192.168.1.2 is at 02:04:06:e3:c4:48
+
+Frame 6 (42 bytes on wire, 42 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Address Resolution Protocol (reply)
+
+No.     Time        Source                Destination           Protocol Info
+      7 68.964760   192.168.1.1           192.168.1.2           TCP      apocd > http [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=110667 TSER=0 WS=1
+
+Frame 7 (74 bytes on wire, 74 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 0, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+      8 68.965102   192.168.1.2           192.168.1.1           TCP      http > apocd [SYN, ACK] Seq=0 Ack=1 Win=5792 Len=0 MSS=1460 TSV=110529 TSER=110667 WS=1
+
+Frame 8 (74 bytes on wire, 74 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 0, Ack: 1, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+      9 68.965128   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=1 Ack=1 Win=5840 Len=0 TSV=110669 TSER=110529
+
+Frame 9 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 1, Ack: 1, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     10 68.985873   192.168.1.1           192.168.1.2           HTTP     GET / HTTP/1.0
+
+Frame 10 (281 bytes on wire, 281 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 1, Ack: 1, Len: 215
+Hypertext Transfer Protocol
+
+No.     Time        Source                Destination           Protocol Info
+     11 68.986127   192.168.1.2           192.168.1.1           TCP      http > apocd [ACK] Seq=1 Ack=216 Win=6864 Len=0 TSV=110531 TSER=110672
+
+Frame 11 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 1, Ack: 216, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     12 68.988750   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 12 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 1, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     13 68.988771   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=1449 Win=8736 Len=0 TSV=110672 TSER=110531
+
+Frame 13 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 1449, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     14 68.988752   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 14 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 1449, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     15 68.988786   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=2897 Win=11632 Len=0 TSV=110672 TSER=110531
+
+Frame 15 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 2897, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     16 68.989028   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 16 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 2897, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     17 68.989057   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=4345 Win=14528 Len=0 TSV=110672 TSER=110531
+
+Frame 17 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 4345, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     18 68.989034   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 18 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 4345, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     19 68.989075   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=5793 Win=17424 Len=0 TSV=110672 TSER=110531
+
+Frame 19 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 5793, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     20 68.989035   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 20 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 5793, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     21 68.989085   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=7241 Win=20320 Len=0 TSV=110672 TSER=110531
+
+Frame 21 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 7241, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     22 68.989038   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 22 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 7241, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     23 68.989092   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=8689 Win=23216 Len=0 TSV=110672 TSER=110531
+
+Frame 23 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 8689, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     24 68.989392   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 24 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 8689, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     25 68.989420   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=10137 Win=26112 Len=0 TSV=110672 TSER=110531
+
+Frame 25 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 10137, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     26 68.989450   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 26 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 10137, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     27 68.989465   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=11585 Win=29008 Len=0 TSV=110672 TSER=110531
+
+Frame 27 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 11585, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     28 68.989992   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 28 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 11585, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     29 68.990017   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=13033 Win=31904 Len=0 TSV=110672 TSER=110531
+
+Frame 29 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 13033, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     30 68.990118   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 30 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 13033, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     31 68.990139   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=14481 Win=34800 Len=0 TSV=110672 TSER=110531
+
+Frame 31 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 14481, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     32 68.990163   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 32 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 14481, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     33 68.990179   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=15929 Win=37696 Len=0 TSV=110672 TSER=110531
+
+Frame 33 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 15929, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     34 68.990257   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 34 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 15929, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     35 68.990280   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=17377 Win=40592 Len=0 TSV=110672 TSER=110531
+
+Frame 35 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 17377, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     36 68.990566   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 36 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 17377, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     37 68.990602   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=18825 Win=43488 Len=0 TSV=110672 TSER=110531
+
+Frame 37 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 18825, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     38 68.990572   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 38 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 18825, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     39 68.990639   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=20273 Win=46384 Len=0 TSV=110672 TSER=110531
+
+Frame 39 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 20273, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     40 68.990664   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 40 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 20273, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     41 68.990698   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=21721 Win=46500 Len=0 TSV=110672 TSER=110531
+
+Frame 41 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 21721, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     42 68.990670   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 42 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 21721, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     43 68.990728   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=23169 Win=45232 Len=0 TSV=110672 TSER=110531
+
+Frame 43 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 23169, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     44 68.990674   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 44 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 23169, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     45 68.990757   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=24617 Win=43962 Len=0 TSV=110672 TSER=110531
+
+Frame 45 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 24617, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     46 68.990780   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 46 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 24617, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     47 68.990785   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 47 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 26065, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     48 68.991161   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 48 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 27513, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     49 68.991270   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 49 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 28961, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     50 68.991366   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 50 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 30409, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     51 68.991460   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 51 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 31857, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     52 68.991574   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 52 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 33305, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     53 68.991678   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 53 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 34753, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     54 68.991785   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 54 (983 bytes on wire, 983 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 36201, Ack: 216, Len: 917
+
+No.     Time        Source                Destination           Protocol Info
+     55 68.991895   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 55 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 37118, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     56 69.015414   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=38566 Win=32542 Len=0 TSV=110674 TSER=110531
+
+Frame 56 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 38566, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     57 69.016056   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 57 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 38566, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     58 69.016063   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 58 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 40014, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     59 69.016067   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 59 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 41462, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     60 69.016076   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 60 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 42910, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     61 69.016080   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 61 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 44358, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     62 69.016086   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 62 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 45806, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     63 69.016090   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 63 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 47254, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     64 69.016096   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 64 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 48702, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     65 69.016237   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 65 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 50150, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     66 69.016244   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 66 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 51598, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     67 69.016247   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 67 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 53046, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     68 69.044740   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=54494 Win=21120 Len=0 TSV=110677 TSER=110534
+
+Frame 68 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 54494, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     69 69.045297   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 69 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 54494, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     70 69.045301   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 70 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 55942, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     71 69.045303   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 71 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 57390, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     72 69.045344   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 72 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 58838, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     73 69.045350   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 73 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 60286, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     74 69.045352   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 74 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 61734, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     75 69.048006   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=63182 Win=17314 Len=0 TSV=110678 TSER=110537
+
+Frame 75 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 63182, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     76 69.048618   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 76 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 63182, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     77 69.048621   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 77 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 64630, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     78 69.048623   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 78 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 66078, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     79 69.048625   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 79 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 67526, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     80 69.048627   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 80 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 68974, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     81 69.048631   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 81 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 70422, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     82 69.049089   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=71870 Win=13506 Len=0 TSV=110678 TSER=110537
+
+Frame 82 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 71870, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     83 69.049415   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 83 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 71870, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     84 69.049418   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 84 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 73318, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     85 69.049420   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 85 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 74766, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     86 69.049422   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 86 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 76214, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     87 69.049427   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 87 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 77662, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     88 69.049429   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 88 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 79110, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     89 69.049981   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=80558 Win=9700 Len=0 TSV=110678 TSER=110537
+
+Frame 89 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 80558, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     90 69.050254   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 90 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 80558, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     91 69.050257   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 91 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 82006, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     92 69.050260   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 92 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 83454, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     93 69.050263   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 93 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 84902, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     94 69.050295   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 94 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 86350, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     95 69.050299   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 95 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 87798, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     96 69.050757   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=89246 Win=5892 Len=0 TSV=110678 TSER=110537
+
+Frame 96 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 89246, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+     97 69.051069   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 97 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 89246, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     98 69.051071   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 98 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 90694, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+     99 69.051073   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 99 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 92142, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    100 69.051075   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 100 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 93590, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    101 69.051492   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=95038 Win=4624 Len=0 TSV=110678 TSER=110537
+
+Frame 101 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 95038, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    102 69.051804   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 102 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 95038, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    103 69.051806   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 103 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 96486, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    104 69.051808   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 104 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 97934, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    105 69.052222   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=99382 Win=3354 Len=0 TSV=110678 TSER=110537
+
+Frame 105 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 99382, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    106 69.052520   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 106 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 99382, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    107 69.052522   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 107 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 100830, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    108 69.053064   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=102278 Win=4624 Len=0 TSV=110678 TSER=110537
+
+Frame 108 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 102278, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    109 69.053407   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 109 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 102278, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    110 69.053411   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 110 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 103726, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    111 69.053413   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 111 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 105174, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    112 69.054041   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=106622 Win=4624 Len=0 TSV=110678 TSER=110537
+
+Frame 112 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 106622, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    113 69.054396   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 113 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 106622, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    114 69.054399   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 114 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 108070, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    115 69.054401   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 115 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 109518, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    116 69.054981   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=110966 Win=4624 Len=0 TSV=110678 TSER=110537
+
+Frame 116 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 110966, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    117 69.055267   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 117 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 110966, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    118 69.055270   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 118 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 112414, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    119 69.055272   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 119 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 113862, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    120 69.055795   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=115310 Win=4624 Len=0 TSV=110678 TSER=110537
+
+Frame 120 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 115310, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    121 69.056079   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 121 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 115310, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    122 69.056082   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 122 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 116758, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    123 69.056085   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 123 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 118206, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    124 69.056638   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=119654 Win=4624 Len=0 TSV=110678 TSER=110537
+
+Frame 124 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 119654, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    125 69.056912   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 125 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 119654, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    126 69.056915   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 126 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 121102, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    127 69.056917   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 127 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 122550, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    128 69.061519   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=123998 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 128 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 123998, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    129 69.061814   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 129 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 123998, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    130 69.061817   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 130 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 125446, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    131 69.061819   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 131 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 126894, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    132 69.062424   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=128342 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 132 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 128342, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    133 69.062834   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 133 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 128342, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    134 69.062837   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 134 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 129790, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    135 69.062840   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 135 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 131238, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    136 69.063198   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=132686 Win=3354 Len=0 TSV=110679 TSER=110537
+
+Frame 136 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 132686, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    137 69.063625   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 137 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 132686, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    138 69.063628   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 138 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 134134, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    139 69.063964   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=135582 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 139 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 135582, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    140 69.064287   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 140 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 135582, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    141 69.064290   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 141 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 137030, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    142 69.064293   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 142 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 138478, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    143 69.064735   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=139926 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 143 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 139926, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    144 69.065020   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 144 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 139926, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    145 69.065023   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 145 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 141374, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    146 69.065025   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 146 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 142822, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    147 69.065517   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=144270 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 147 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 144270, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    148 69.065812   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 148 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 144270, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    149 69.065816   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 149 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 145718, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    150 69.065818   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 150 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 147166, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    151 69.066363   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=148614 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 151 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 148614, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    152 69.066645   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 152 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 148614, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    153 69.066648   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 153 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 150062, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    154 69.066651   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 154 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 151510, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    155 69.067313   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=152958 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 155 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 152958, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    156 69.067550   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 156 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 152958, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    157 69.067554   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 157 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 154406, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    158 69.067556   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 158 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 155854, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    159 69.068159   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=157302 Win=3354 Len=0 TSV=110679 TSER=110537
+
+Frame 159 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 157302, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    160 69.068433   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 160 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 157302, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    161 69.068436   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 161 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 158750, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    162 69.068898   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=160198 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 162 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 160198, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    163 69.069217   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 163 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 160198, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    164 69.069238   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 164 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 161646, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    165 69.069240   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 165 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 163094, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    166 69.069769   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=164542 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 166 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 164542, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    167 69.070048   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 167 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 164542, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    168 69.070050   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 168 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 165990, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    169 69.070052   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 169 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 167438, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    170 69.070448   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=168886 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 170 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 168886, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    171 69.070681   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 171 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 168886, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    172 69.070684   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 172 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 170334, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    173 69.070686   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 173 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 171782, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    174 69.071123   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=173230 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 174 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 173230, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    175 69.071342   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 175 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 173230, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    176 69.071344   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 176 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 174678, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    177 69.071347   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 177 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 176126, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    178 69.071789   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=177574 Win=3354 Len=0 TSV=110679 TSER=110537
+
+Frame 178 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 177574, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    179 69.072003   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 179 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 177574, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    180 69.072005   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 180 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 179022, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    181 69.072439   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=180470 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 181 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 180470, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    182 69.072672   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 182 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 180470, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    183 69.072674   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 183 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 181918, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    184 69.072676   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 184 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 183366, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    185 69.073116   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=184814 Win=4624 Len=0 TSV=110679 TSER=110537
+
+Frame 185 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 184814, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    186 69.073380   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 186 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 184814, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    187 69.073382   192.168.1.2           192.168.1.1           TCP      [TCP segment of a reassembled PDU]
+
+Frame 187 (1514 bytes on wire, 1514 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 186262, Ack: 216, Len: 1448
+
+No.     Time        Source                Destination           Protocol Info
+    188 69.073384   192.168.1.2           192.168.1.1           HTTP     HTTP/1.0 200 OK (text/html)
+
+Frame 188 (389 bytes on wire, 389 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 187710, Ack: 216, Len: 323
+[Reassembled TCP Segments (188032 bytes): #12(1448), #14(1448), #16(1448), #18(1448), #20(1448), #22(1448), #24(1448), #26(1448), #28(1448), #30(1448), #32(1448), #34(1448), #36(1448), #38(1448), #40(1448), #42(1448), #44(1448), #46(1448), ]
+Hypertext Transfer Protocol
+Line-based text data: text/html
+
+No.     Time        Source                Destination           Protocol Info
+    189 69.077857   192.168.1.1           192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=188034 Win=4624 Len=0 TSV=110680 TSER=110537
+
+Frame 189 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 188034, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    190 69.111519   192.168.1.1           192.168.1.2           TCP      apocd > http [FIN, ACK] Seq=216 Ack=188034 Win=49280 Len=0 TSV=110684 TSER=110537
+
+Frame 190 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: apocd (3809), Dst Port: http (80), Seq: 216, Ack: 188034, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    191 69.112009   192.168.1.2           192.168.1.1           TCP      http > apocd [ACK] Seq=188034 Ack=217 Win=6864 Len=0 TSV=110544 TSER=110684
+
+Frame 191 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: apocd (3809), Seq: 188034, Ack: 217, Len: 0
+
+No.     Time        Source                Destination           Protocol Info
+    192 120.006048  BbnInter_e3:c4:48     Broadcast             AoE      Query Config Information Request
+
+Frame 192 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet
+
+No.     Time        Source                Destination           Protocol Info
+    193 120.026837  BbnInter_bf:bf:bb     Broadcast             AoE      Query Config Information Request
+
+Frame 193 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet
+
+No.     Time        Source                Destination           Protocol Info
+    194 180.009789  BbnInter_e3:c4:48     Broadcast             AoE      Query Config Information Request
+
+Frame 194 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_e3:c4:48 (02:04:06:e3:c4:48), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet
+
+No.     Time        Source                Destination           Protocol Info
+    195 180.030432  BbnInter_bf:bf:bb     Broadcast             AoE      Query Config Information Request
+
+Frame 195 (32 bytes on wire, 32 bytes captured)
+Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+ATAoverEthernet

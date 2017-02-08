@@ -1,0 +1,21 @@
+lynx http://192.168.1.2
+
+Looking up 192.168.1.2
+Making HTTP connection to 192.168.1.2
+Sending HTTP request.
+HTTP request sent; waiting for response.
+Alert!: Unexpected network read error; connection aborted.
+Can't Access `http://192.168.1.2/'
+Alert!: Unable to access document.
+
+lynx: Can't access startfile
+
+
+----machine 2
+netcat -l -p 80
+GET / HTTP/1.0
+Host: 192.168.1.2
+Accept: text/html, text/plain, text/css, text/sgml, */*;q=0.01
+Accept-Encoding: gzip
+Accept-Language: en
+User-Agent: Lynx/2.8.6rel.4 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.6.2
