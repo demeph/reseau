@@ -8,17 +8,17 @@
 
 Le modèle OSI est un modèle théorique permettant de décrire le fonctionnement d'un réseau. Ils'agit de sept couches empilées de sorte à ce que chaque couche fournisse un service à la couche du dessus en s'appuyant sur le service rendu par la couche du dessous. Parmi ces 7 couches, on en distingue deux types : les couches hautes et les couches matérielles. 
 
-| **Couche**                | **Description**                                              |
-| ------------------------- | ---------------------------------------- |
-| **Couches Hautes**        |                                                                            |
-| 7. Application            | Point d'accès aux	services réseaux       |
-| 6. Présentation           | Permet de convertir les données machine en données qui permet aux autres machines	d'utiliser |
-| 5. Session                |                                          |
-| 4. Transport              | Permet de transporter les données et se charge que les données sont bien				reçu |
-| **Couches	Matérielles**   |                                          |
-| 3. Réseau                 |                                          |
-| 2. Liaison                |                                          |
-| 1. Physique               |                                          |
+| **Couche**              | **Description**                          |
+| ----------------------- | ---------------------------------------- |
+| **Couches Hautes**      |                                          |
+| 7. Application          | Point d'accès aux	services réseaux       |
+| 6. Présentation         | Permet de convertir les données machine en données qui permet aux autres machines	d'utiliser |
+| 5. Session              |                                          |
+| 4. Transport            | Permet de transporter les données et se charge que les données sont bien		ionnvkenvioienvinnvirenivniernviernvinirnvierninrvinreinvinvirnvirn |
+| **Couches	Matérielles** |                                          |
+| 3. Réseau               |                                          |
+| 2. Liaison              |                                          |
+| 1. Physique             |                                          |
 # finir le tableau #
 
 
@@ -42,13 +42,13 @@ Le routage des paquets est la procédure permettant à deux ordinateurs distants
 ### Adresses IP  & adresses MAC
 
 L'adresse IP est une adresse logique permettant d'identifier une machine dans un réseau. Il existe plusieurs formats d'adresse ip, chacune ayant un certain nombre de bits destiné à identifier le réseau et un certain nombre de bits identifiant la machine. On identifie 5 différentes classes d'adresses IP :
-| **Classe**								| **Description** 											| **nombre de postes** | **notes** |
-|-|-|-|
-| A | 0RRR.MMMM.MMMM.MMMM | 16 777 214 | |
-| B | 10RR.RRRR.MMMM.MMMM | 65 534 | |
-| C | 110R.RRRR.RRRR.MMMM | 254 | |
-| D | 1110.XXXX.XXXX.XXXX | | utilisé pour les communications multicast |
-| E | 1111.XXXX.XXXX.XXXX | | réservé par l'IANA mais non utilisé |
+| **Classe** | **Description**     | **nombre de postes** | **notes**                                |
+| ---------- | ------------------- | -------------------- | ---------------------------------------- |
+| A          | 0RRR.MMMM.MMMM.MMMM | 16 777 214           |                                          |
+| B          | 10RR.RRRR.MMMM.MMMM | 65 534               |                                          |
+| C          | 110R.RRRR.RRRR.MMMM | 254                  |                                          |
+| D          | 1110.XXXX.XXXX.XXXX |                      | utilisé pour les communications multicast |
+| E          | 1111.XXXX.XXXX.XXXX |                      | réservé par l'IANA mais non utilisé      |
 
 
 Une adresse MAC permet d'identifier de manière unique une carte réseau (en théorie). Une adresse MAC est constituée de six octets, généralement représentés de la manière suivante : XX:XX:XX:YY:YY:YY.

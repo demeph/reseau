@@ -36,13 +36,13 @@ ifconfig eth0 192.168.1.2 netmask 255.255.255.0
 
 ```
 ifconfig eth0 192.168.1.254 netmask 255.255.255.0 sur h1
-ifconfig eth1 10.1O.0.254 netmask 255.255.255.0 sur h2
+ifconfig eth1 10.1O.255.254 netmask 255.255.0.0 sur h2
 ```
 
 - machine m4
 
 ```
-ifconfig eth0 10.10.0.4 netmask 255.255.255.0
+ifconfig eth0 10.10.0.4 netmask 255.255.0.0
 ```
 
 
@@ -56,7 +56,7 @@ ifconfig eth0 10.10.0.4 netmask 255.255.255.0
 - sur la machine  1 et 2 , on tape la commande suivante:
 
 ````
-route add -net 10.10.0.0 netmask 255.255.255.0 gw 192.168.1.254
+route add -net 10.10.0.0/16 gw 192.168.1.254
 ````
 
 - sur la machine 3, on n'a pas besoin cette commande, car par default elle est deja connectés à 2 hubs, mais on autorise de faire la passerelle en tapant la commande suivante :
@@ -68,7 +68,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 - sur la machine 4 on tape la commande 
 
 ````
-route add -net 192.168.1.0 netmask 255.255.255.0 gw 10.10.0.254
+route add -net 192.168.1.0/24 gw 10.10.255.254
 ````
 
 ### Teste de la connexion

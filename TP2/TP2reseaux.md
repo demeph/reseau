@@ -1,4 +1,7 @@
+**JAMET Felix - PHALAVANDISHVILI Demetre - Groupe 601B** 
+
 # TP 2 reseaux #
+
 ##Câblage et configuration de base ##
 
   Après avoir branché toutes les machines aux switchs, on attribue à chaque machine une adresse IP en utilisant les commande suivantes
@@ -8,7 +11,7 @@
 
 
   Une fois les adresses IP configurées, on utilise la commande *ping* pour s'assurer que les liaisons on bien été établies
-  
+
 -  ping réalisés à partir de la machine m1
 ```
     
@@ -166,7 +169,7 @@ Dans le fichier *hosts* de  la machine 3, on ajoute:
 
 Test des modification effectuées :
 
-  - machine 1 $\rightarrow$ machine 2
+- machine 1 $\rightarrow$ machine 2
 ```
 ping -c 2 m2
 PING m2 (192.168.1.2) 56(84) bytes of data.
@@ -178,7 +181,7 @@ PING m2 (192.168.1.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.524/0.987/1.451/0.464 ms
 ```
 
-  - machine 1 $\rightarrow$ machine 3
+- machine 1 $\rightarrow$ machine 3
 ```
 ping -c 2 m3
 PING m3 (192.168.1.3) 56(84) bytes of data.
@@ -190,7 +193,7 @@ PING m3 (192.168.1.3) 56(84) bytes of data.
 rtt min/avg/max/mdev = 1.068/1.190/1.313/0.127 ms
 ```
 
-  - machine 2 $\rightarrow$ machine 1
+- machine 2 $\rightarrow$ machine 1
 ```
 ping -c 2 m1
 PING m1 (192.168.1.1) 56(84) bytes of data.
@@ -202,7 +205,7 @@ PING m1 (192.168.1.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.603/10.926/21.249/10.323 ms
 ```
 
-  - machine 2 $\rightarrow$ machine 3
+- machine 2 $\rightarrow$ machine 3
 ```
 ping -c 2 m3
 PING m3 (192.168.1.3) 56(84) bytes of data.
@@ -214,7 +217,7 @@ PING m3 (192.168.1.3) 56(84) bytes of data.
 rtt min/avg/max/mdev = 1.550/11.393/21.237/9.844 ms
 ```
 
-  - machine 3 $\rightarrow$ machine 1
+- machine 3 $\rightarrow$ machine 1
 ```
 ping -c 2  m1
 PING m1 (192.168.1.1) 56(84) bytes of data.
@@ -226,7 +229,7 @@ PING m1 (192.168.1.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.700/11.415/22.131/10.716 ms
 ```
 root
-  - machine 3 $\rightarrow$ machine 2
+- machine 3 $\rightarrow$ machine 2
 ```
 ping -c 2  m2
 PING m2 (192.168.1.2) 56(84) bytes of data.
@@ -286,9 +289,23 @@ eth0      Link encap:Ethernet  HWaddr 02:04:06:e0:ee:f5
 On remarque qu'il y a bien une correspondance entre les adresses MAC données par la table ARP sur m1 et celles données par ifconfig sur m2 et m3.
 
 ### Capture de trames ARP ###
-Le type à l'intérieur des trames ethernet de la requête et de la réponse ARP est "ARP (0x0806)"
+Le type à l'intérieur des trames ethernet de la requête et de la réponse ARP est "ARP (0x0806)".
 
-Le type de la requête et la réponse ICMP est "IP (0x0800)"
+Le type de la requête et de la réponse ICMP est "IP (0x0800)".
 
-## fragmentation ##
 
+
+Quand on selectionne la trame *arp* dans wireshark, on voit que on a les 3 couches d'encapsulation suivantes :
+
+- La 1ere  couche wire ou filaire qui correspond aux données sur le media de capture
+- La 2eme couche est *Ethernet II* qui correspond à la couche de liaison de données du modèle OSI
+- La 3eme couche est *Address Resolution Protocol*, un protocole effectuant la traduction d'une adresse IP à une adresse MAC.  
+
+Pour la trame *ICMP*, on distingue  les 4 couches d'encapsulation suivantes
+
+- La 1ère  couche wire ou filaire qui correspond aux données sur le media de capture
+- La 2ème couche est *Ethernet II* qui correspont à la couche de liaison de donnée de modele OSI
+- La 3ème couche est *Internet Protocol version 4* qui correspond a un relatif a la couche reseau.
+- La 4ème couche est *Internet Control Message protocol* qui permet de communiquer des messages  de contrôle et d'erreur de protocole.
+
+Les différences entre ARP et ICMP sont les couches qui corresponnent à  *Internet Protocol version 4* et  *Internet Control Message protocol* .
