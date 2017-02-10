@@ -1,0 +1,81 @@
+No.     Time        Source                Destination           Protocol Info
+      1 0.000000    192.168.1.1           192.168.1.2           TCP      4083 > http [SYN] Seq=0 Win=5840 Len=0 MSS=1460 TSV=4294963568 TSER=0 WS=1
+
+Frame 1 (74 bytes on wire, 74 bytes captured)
+Ethernet II, Src: BbnInter_b8:59:2c (02:04:06:b8:59:2c), Dst: BbnInter_a5:d9:61 (02:04:06:a5:d9:61)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: 4083 (4083), Dst Port: http (80), Seq: 0, Len: 0
+No.     Time        Source                Destination           Protocol Info
+      2 0.000343    192.168.1.2           192.168.1.1           TCP      http > 4083 [SYN, ACK] Seq=0 Ack=1 Win=5792 Len=0 MSS=1460 TSV=4294963407 TSER=4294963568 WS=1
+
+Frame 2 (74 bytes on wire, 74 bytes captured)
+Ethernet II, Src: BbnInter_a5:d9:61 (02:04:06:a5:d9:61), Dst: BbnInter_b8:59:2c (02:04:06:b8:59:2c)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: 4083 (4083), Seq: 0, Ack: 1, Len: 0
+No.     Time        Source                Destination           Protocol Info
+      3 0.000287    192.168.1.1           192.168.1.2           TCP      4083 > http [ACK] Seq=1 Ack=1 Win=5840 Len=0 TSV=4294963568 TSER=4294963407
+
+Frame 3 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_b8:59:2c (02:04:06:b8:59:2c), Dst: BbnInter_a5:d9:61 (02:04:06:a5:d9:61)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: 4083 (4083), Dst Port: http (80), Seq: 1, Ack: 1, Len: 0
+No.     Time        Source                Destination           Protocol Info
+      4 0.020884    192.168.1.1           192.168.1.2           HTTP     GET / HTTP/1.0
+
+Frame 4 (281 bytes on wire, 281 bytes captured)
+Ethernet II, Src: BbnInter_b8:59:2c (02:04:06:b8:59:2c), Dst: BbnInter_a5:d9:61 (02:04:06:a5:d9:61)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: 4083 (4083), Dst Port: http (80), Seq: 1, Ack: 1, Len: 215
+Hypertext Transfer Protocol
+No.     Time        Source                Destination           Protocol Info
+      5 0.020911    192.168.1.2           192.168.1.1           TCP      http > 4083 [ACK] Seq=1 Ack=216 Win=6864 Len=0 TSV=4294963410 TSER=4294963570
+
+Frame 5 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_a5:d9:61 (02:04:06:a5:d9:61), Dst: BbnInter_b8:59:2c (02:04:06:b8:59:2c)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: 4083 (4083), Seq: 1, Ack: 216, Len: 0
+No.     Time        Source                Destination           Protocol Info
+      6 0.068318    192.168.1.2           192.168.1.1           HTTP     HTTP/1.1 200 OK (text/html)
+
+Frame 6 (362 bytes on wire, 362 bytes captured)
+Ethernet II, Src: BbnInter_a5:d9:61 (02:04:06:a5:d9:61), Dst: BbnInter_b8:59:2c (02:04:06:b8:59:2c)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: 4083 (4083), Seq: 1, Ack: 216, Len: 296
+Hypertext Transfer Protocol
+Line-based text data: text/html
+No.     Time        Source                Destination           Protocol Info
+      7 0.068594    192.168.1.1           192.168.1.2           TCP      4083 > http [ACK] Seq=216 Ack=297 Win=6912 Len=0 TSV=4294963574 TSER=4294963413
+
+Frame 7 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_b8:59:2c (02:04:06:b8:59:2c), Dst: BbnInter_a5:d9:61 (02:04:06:a5:d9:61)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: 4083 (4083), Dst Port: http (80), Seq: 216, Ack: 297, Len: 0
+No.     Time        Source                Destination           Protocol Info
+      8 0.069314    192.168.1.2           192.168.1.1           TCP      http > 4083 [FIN, ACK] Seq=297 Ack=216 Win=6864 Len=0 TSV=4294963413 TSER=4294963574
+
+Frame 8 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_a5:d9:61 (02:04:06:a5:d9:61), Dst: BbnInter_b8:59:2c (02:04:06:b8:59:2c)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: 4083 (4083), Seq: 297, Ack: 216, Len: 0
+No.     Time        Source                Destination           Protocol Info
+      9 0.113180    192.168.1.1           192.168.1.2           TCP      4083 > http [ACK] Seq=216 Ack=298 Win=6912 Len=0 TSV=4294963578 TSER=4294963413
+
+Frame 9 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_b8:59:2c (02:04:06:b8:59:2c), Dst: BbnInter_a5:d9:61 (02:04:06:a5:d9:61)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: 4083 (4083), Dst Port: http (80), Seq: 216, Ack: 298, Len: 0
+No.     Time        Source                Destination           Protocol Info
+     10 0.113182    192.168.1.1           192.168.1.2           TCP      4083 > http [FIN, ACK] Seq=216 Ack=298 Win=6912 Len=0 TSV=4294963579 TSER=4294963413
+
+Frame 10 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_b8:59:2c (02:04:06:b8:59:2c), Dst: BbnInter_a5:d9:61 (02:04:06:a5:d9:61)
+Internet Protocol, Src: 192.168.1.1 (192.168.1.1), Dst: 192.168.1.2 (192.168.1.2)
+Transmission Control Protocol, Src Port: 4083 (4083), Dst Port: http (80), Seq: 216, Ack: 298, Len: 0
+No.     Time        Source                Destination           Protocol Info
+     11 0.113213    192.168.1.2           192.168.1.1           TCP      http > 4083 [ACK] Seq=298 Ack=217 Win=6864 Len=0 TSV=4294963418 TSER=4294963579
+
+Frame 11 (66 bytes on wire, 66 bytes captured)
+Ethernet II, Src: BbnInter_a5:d9:61 (02:04:06:a5:d9:61), Dst: BbnInter_b8:59:2c (02:04:06:b8:59:2c)
+Internet Protocol, Src: 192.168.1.2 (192.168.1.2), Dst: 192.168.1.1 (192.168.1.1)
+Transmission Control Protocol, Src Port: http (80), Dst Port: 4083 (4083), Seq: 298, Ack: 217, Len: 0
+
