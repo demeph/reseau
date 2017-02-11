@@ -2,17 +2,6 @@ No.     Time        Source                Destination           Protocol Info
       1 0.000000    192.168.1.1           192.168.1.2           DNS      Standard query A www.google.fr
 
 Frame 1 (73 bytes on wire, 73 bytes captured)
-    Arrival Time: Feb  7, 2017 12:53:05.407713000
-    [Time delta from previous captured frame: 0.000000000 seconds]
-    [Time delta from previous displayed frame: 0.000000000 seconds]
-    [Time since reference or first frame: 0.000000000 seconds]
-    Frame Number: 1
-    Frame Length: 73 bytes
-    Capture Length: 73 bytes
-    [Frame is marked: False]
-    [Protocols in frame: eth:ip:udp:dns]
-    [Coloring Rule Name: UDP]
-    [Coloring Rule String: udp]
 Ethernet II, Src: BbnInter_bf:bf:bb (02:04:06:bf:bf:bb), Dst: BbnInter_e3:c4:48 (02:04:06:e3:c4:48)
     ...
     Type: IP (0x0800)
