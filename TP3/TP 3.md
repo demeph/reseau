@@ -1,45 +1,38 @@
-*Jamet Felix - PHALAVANDISHVILI* Demetre
+*Jamet Félix - PHALAVANDISHVILI Demetre*
 
 # TP 3 
 
-## Mise en place de la configuration  
+## Mise en place de la configuration
 
-Après avoir tout brancher sur marionnet, on configure les machines m1,m2,m3 et  m4. 
-
-Les adresses ip sont 
-
+Après avoir tout branché sur marionnet, on configure les machines m1, m2, m3 et m4 avec les adresses suivantes :
 - m1 : 192.168.1.1 
-
 - m2 : 192.168.1.2
+- m3 : 192.168.1.254 sur LAN1 et 10.10.0.254 sur LAN2
 
-- m3 : 2 adresses : sur h1 192.168.1.254 (derniere adresse disponible)
+Voici les commandes utilisées pour configurer les machines :
 
-  ​			       sur h2 10.10.0.254 (derniere adresse disponible)	
-
-Les commandes sont suivantes :
-
-- machine m1
+- machine m1 :
 
 ```
 ifconfig eth0 192.168.1.1 netmask 255.255.255.0
 ```
 
-- machine m2
+- machine m2 :
 
 ```
 ifconfig eth0 192.168.1.2 netmask 255.255.255.0
 ```
 
-- machine m3
+- machine m3 :
 
-  Comme elle est connectée aux des hub, nous sommes obligé d'attribuer 2 fois l'adresse.
+Cette machine étant connectée aux deux réseaux, nous sommes obligés de lui attribuer deux adresses
 
 ```
-ifconfig eth0 192.168.1.254 netmask 255.255.255.0 sur h1
-ifconfig eth1 10.1O.255.254 netmask 255.255.0.0 sur h2
+ifconfig eth0 192.168.1.254 netmask 255.255.255.0
+ifconfig eth1 10.1O.255.254 netmask 255.255.0.0
 ```
 
-- machine m4
+- machine m4 :
 
 ```
 ifconfig eth0 10.10.0.4 netmask 255.255.0.0
@@ -49,17 +42,17 @@ ifconfig eth0 10.10.0.4 netmask 255.255.0.0
 
 ## Configuration d'un connexion avec la passerelle pour chaque machine
 
-​	Pour établir une connexion avec les machines qui sont connecté au hub h2, on doit configurer la passerelle sur la machine 3 car c'est une seule machine qui est relié a la fois à h1 et h2.
+Pour établir une connexion entre deux machines appartenant à des réseaux différents, on doit configurer la passerelle sur la machine 3 car c'est la seule machine qui est reliée à la fois à LAN1 et à LAN2.
 
-​	On utilise la commande *route* pour etablir la connexion avec les machines connectées au h1 et h2.
+On utilise la commande *route* pour définir une route avec un autre réseau.
 
-- sur la machine  1 et 2 , on tape la commande suivante:
+- sur les machine m1 et m2, on tape la commande suivante:
 
-````
+```
 route add -net 10.10.0.0/16 gw 192.168.1.254
-````
+```
 
-- sur la machine 3, on n'a pas besoin cette commande, car par default elle est deja connectés à 2 hubs, mais on autorise de faire la passerelle en tapant la commande suivante :
+- sur la machine m3, on n'as pas besoin cette commande, car elle est déjà connectée aux deux réseaux, mais on doit cependant activer l'ip forwarding avec la commande suivante :
 
 ```
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -67,13 +60,13 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 - sur la machine 4 on tape la commande 
 
-````
+```
 route add -net 192.168.1.0/24 gw 10.10.255.254
-````
+```
 
-### Teste de la connexion
+### Test de la connexion
 
-de la machine 1 vers la machine 4 :
+De la machine 1 vers la machine 4 :
 
 ```
 ping 10.10.04
@@ -87,7 +80,11 @@ PING 10.10.04 (10.10.0.4) 56(84) bytes of data.
 rtt min/avg/max/mdev = 1.181/14.583/41.102/18.752 ms
 ```
 
-On voit que la passerelle est bien configurer.
+On constate que la passerelle est bien configurée.
+
+### Configuration de passerelle par défaut
+
+On supprime les routes précédemment rajoutées et on configure m3 en tant que passerelle par défaut :
 
 ```
 m1:~# route
@@ -107,38 +104,39 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 default         192.168.1.254   0.0.0.0         UG    0      0        0 eth0
 ```
 
-La différence en utilisant default est que m3 est maintenant la passerelle pour tous les réseaux et pas seulement pour les réseaux que l'on a créé. De plus, la commande route met beaucoup plus de temps à afficher la ligne correspondant à la passerelle lorsqu'elle est configurée par défaut.
+La différence en utilisant la configuration par défaut est que la machine m3 fait maintenant office de passerelle pour tous les réseaux et plus seulement entre les réseaux LAN1 et LAN2 que l'on a créé.
+De plus, la commande route met beaucoup plus de temps à afficher la ligne correspondant à la passerelle lorsqu'elle est configurée par défaut.
 
 Pour observer cette différence, il faudrait chercher à joindre un autre réseau et utiliser un outil comme wireshark pour analyser les trames.
 
 ## Le rôle de ICMP dans le routage IP : un cas de figure
 
-en tentant un ping sur la machine m4, on obtient le résultat indiqué dans le sujet.
+En tentant un ping sur la machine m4, on obtient le résultat indiqué dans le sujet ( ```connect: Network is unreachable``` ).
 
-### configuration de l'IP de l'interface eth0 sur m1
+### Configuration de l'IP de l'interface eth0 sur m1
 
-Rien ne se passe car la passerrelle n'est pas configurée sur m1.
+Rien ne se passe car la passerelle n'est pas configurée sur m1.
 
-### configuration de m3 comme passerelle par défault sur m1
+### Configuration de m3 comme passerelle par défaut sur m1
 
-on observe des requêtes du protocole ARP, demandant la machine correspondant à l'addresse IP de la passerelle. Comme celle ci n'est pas configurée, les requêtes restent sans réponse.
+On observe des requêtes du protocole ARP, demandant quelle est la machine correspondant à l'addresse IP de la passerelle. Comme celle ci n'est pas configurée, les requêtes restent sans réponse.
 
-### configuration des IPs des interfaces eth0 et eth1 sur m3
+### Configuration des IPs des interfaces eth0 et eth1 sur m3
 
-Une fois machione 3 configuré, on observe maintenant des requêtes du protocole ICMP envoyé par m1, mais commme la ip_forwarding n'est pas activé, on n'a pas de reponse.
+Une fois machine 3 configurée, on observe maintenant des requêtes du protocole ICMP envoyé par m1, mais commme l'ip forwarding n'est pas activé, celles-ci restent sans réponse.
 
-### activation routage sur m3
+### Activation du routage sur m3
 
-- Une fois ip_forwading activer on voit que m3 repond a m1 en disant que m4 n'est pas atteignable en utilisant le protocole ICMP. Il ne s'agit ni d'un message de type REPLY ni d'un message de type ECHO mais d'un message de type HOST UNREACHABLE. Sur m4, on voit une requête ARP originant de m3, demandant à quelle machine correspond l'adresse 10.10.0.4 .
+Une fois l'ip forwarding activé, on voit que m3 réponds à m1 en disant que m4 n'est pas atteignable en utilisant le protocole ICMP. Il ne s'agit ni d'un message de type REPLY ni d'un message de type ECHO mais d'un message de type HOST UNREACHABLE. Sur m4, on voit une requête ARP originant de m3, demandant à quelle machine correspond l'adresse 10.10.0.4.
 
-### configuration l'interface eth0 sur M4
+### Configuration de l'interface eth0 sur M4
 
-- La situation est amelioré dans le sens que m1 envoie des messages a m4(ICMP de type ECHO) mais comme la passerelle n'est pas configuré sur m4, m4 ne reponds pas.
-- Sur les deux reseaux on observe meme type des trames du protocole ICMP de type ECHO. 
+La situation est ameliorée dans le sens que m1 envoie des messages a m4(ICMP de type ECHO). Cependant, comme la passerelle n'est pas configurée sur m4, m4 ne réponds pas.
+- Sur les deux réseaux, on observe des trames du protocole ICMP de type ECHO. 
 
-### configuration de m3 comme passerelle par défault sur m4
+### Configuration de m3 comme passerelle par défault sur m4
 
-  Une fois passerelle configurer le ping $m1 \rightarrow m4$ finalement fonctionne.
+Une fois la passerelle configurée, le ping $m1 \rightarrow m4$ fonctionne finalement.
 
 
 
