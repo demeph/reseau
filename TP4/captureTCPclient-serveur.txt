@@ -1,0 +1,12 @@
+...
+No.     Time        Source             Destination        Protocol                 Info
+3     0.000696    192.168.1.1          192.168.1.2           TCP      apocd > http [SYN] Seq=0 Win=5840
+4     0.000778    192.168.1.2          192.168.1.1           TCP      http > apocd [SYN, ACK] Seq=0 Ack=1 Win=5792
+5     0.001649    192.168.1.1          192.168.1.2           TCP      apocd > http [ACK] Seq=1 Ack=1 Win=5840
+6     0.023627    192.168.1.1          192.168.1.2           HTTP     GET / HTTP/1.0
+7     0.023693    192.168.1.2          192.168.1.1           TCP      http > apocd [ACK] Seq=1 Ack=216 Win=6864
+8     7.160482    192.168.1.2          192.168.1.1           TCP      http > apocd [FIN, ACK] Seq=1 Ack=216 Win=6864
+9     7.173982    192.168.1.1          192.168.1.2           TCP      apocd > http [ACK] Seq=216 Ack=2 Win=5840
+10   10.181036    192.168.1.1          192.168.1.2           TCP      apocd > http [FIN, ACK] Seq=216 Ack=2 Win=5840
+11   10.181102    192.168.1.2          192.168.1.1           TCP      http > apocd [ACK] Seq=2 Ack=217 Win=6864
+...
