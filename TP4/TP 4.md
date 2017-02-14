@@ -61,9 +61,7 @@ Domain Name System (query)
 
 - transaction ID de la partie DNS
 
-  ​	L'ID de transaction est créé par l'expéditeur du message (dans notre cas, m1) et est copié par le récepteur (ici, m2) dans son message de réponse. À l'aide de l'ID de transaction, le client DNS peut faire correspondre des réponses à ses demandes
-
-# what ?
+  ​	L'ID de transaction est créé par l'expéditeur du message (dans notre cas, m1) et est copié par le récepteur (ici, m2) dans son message de réponse.
 
 - le temps de la requête (Time)
 
@@ -120,9 +118,7 @@ No.     Time        Source             Destination        Protocol              
 ...
 ```
 
-​	Avant de forcer la terminaison du processus *netcat*, on voit dans le terminal de m1 la requête HTTP envoyée à m2 et la machine 1 est  l'attente de la reponse de la part de m2.
-# idontgetit
-Mais *netcat* est un utilitaire permettant d'ouvrir des connexions réseau, donc m1 ne recevera pas de réponse. Après avoir forcé l'arrêt du processus *netcat*, on voit que m2 signale la fin de la connexion en envoyant l'indicateur *FIN* et un accusé de réception. Par la suite, m1 réponds qu'il a bien reçu la demande de fin de la connexion et renvoie à http l'indicateur *Fin* +  *Ack*. Ensuite http envoie un accusé de réception. À partir de là, on peut déduire que la connexion est terminée. La ligne 8 nous montre donc que netcat a bien la *"politesse"* d'envoyer un datagramme de fin de connexion TCP.
+​	Avant de forcer la terminaison du processus *netcat*, on voit dans le terminal que m1 envoie une requête HTTP à m2 et attend donc une réponse de la part de m2. Cependant, *netcat* est un utilitaire permettant d'ouvrir des connexions réseau, donc m1 ne recevera pas de réponse. Après avoir forcé l'arrêt du processus *netcat*, on voit que m2 signale la fin de la connexion en envoyant l'indicateur *FIN* et un accusé de réception. Par la suite, m1 réponds qu'il a bien reçu la demande de fin de la connexion et renvoie à http l'indicateur *Fin* +  *Ack*. Ensuite http envoie un accusé de réception. À partir de là, on peut déduire que la connexion est terminée. La ligne 8 nous montre donc que netcat a bien la *"politesse"* d'envoyer un datagramme de fin de connexion TCP.
 
 ### Fiabilité d'une connexion TCP
 
