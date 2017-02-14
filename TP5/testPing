@@ -1,0 +1,42 @@
+ m5 -> m1
+ ping -c 5 194.85.40.1
+PING 194.85.40.1 (194.85.40.1) 56(84) bytes of data.
+64 bytes from 194.85.40.1: icmp_seq=1 ttl=64 time=9.02 ms
+64 bytes from 194.85.40.1: icmp_seq=2 ttl=64 time=2.86 ms
+64 bytes from 194.85.40.1: icmp_seq=3 ttl=64 time=2.27 ms
+64 bytes from 194.85.40.1: icmp_seq=4 ttl=64 time=7.20 ms
+64 bytes from 194.85.40.1: icmp_seq=5 ttl=64 time=4.17 ms
+
+--- 194.85.40.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4029ms
+rtt min/avg/max/mdev = 2.273/5.108/9.026/2.596 ms
+
+
+ m1 -> m6
+ ping -c 5 10.10.0.5
+PING 10.10.0.5 (10.10.0.5) 56(84) bytes of data.
+64 bytes from 10.10.0.5: icmp_seq=1 ttl=64 time=2.12 ms
+64 bytes from 10.10.0.5: icmp_seq=2 ttl=64 time=1.50 ms
+64 bytes from 10.10.0.5: icmp_seq=3 ttl=64 time=1.33 ms
+64 bytes from 10.10.0.5: icmp_seq=4 ttl=64 time=1.41 ms
+64 bytes from 10.10.0.5: icmp_seq=5 ttl=64 time=1.39 ms
+
+--- 10.10.0.5 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4038ms
+rtt min/avg/max/mdev = 1.336/1.553/2.123/0.293 ms
+
+m2 -> m4
+ ping -c 5 194.85.44.4
+PING 194.85.44.4 (194.85.44.4) 56(84) bytes of data.
+64 bytes from 194.85.44.4: icmp_seq=1 ttl=64 time=28.6 ms
+64 bytes from 194.85.44.4: icmp_seq=2 ttl=64 time=1.95 ms
+64 bytes from 194.85.44.4: icmp_seq=3 ttl=64 time=2.26 ms
+64 bytes from 194.85.44.4: icmp_seq=4 ttl=64 time=2.23 ms
+64 bytes from 194.85.44.4: icmp_seq=5 ttl=64 time=1.93 ms
+
+--- 194.85.44.4 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, ti
+
+m1 -> m2
+ ping 194.85.44.2
+connect: Network is unreachable
