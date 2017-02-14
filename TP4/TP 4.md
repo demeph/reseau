@@ -1,4 +1,4 @@
-.. *JAMET Félix - PHALAVANDISHVILI Demetre*
+*JAMET Félix - PHALAVANDISHVILI Demetre*
 
 # TP 4 - Étude des protocoles UDP et TCP#
 
@@ -211,7 +211,7 @@ Sur les 40 paquets transmis, on remarque que, le plus grand écart entre les paq
   rtt min/avg/max/mdev = 0.687/1.004/1.262/0.154 ms, pipe 3
   ```
 
-	On remarque qu'il a été difficile d'atteindre m1 à cause d'une trop grande perte de paquets et que le premier paquet arrivé sur la machine m1 est le paquet numéro 16.
+  On remarque qu'il a été difficile d'atteindre m1 à cause d'une trop grande perte de paquets et que le premier paquet arrivé sur la machine m1 est le paquet numéro 16.
 
 - to m1 = 80 % & to m2 = 80 %
 
@@ -246,7 +246,7 @@ Sur les 40 paquets transmis, on remarque que, le plus grand écart entre les paq
 
   ```
 
-	On voit que avec 80 % de dysfonctionnements, on n'arrive plus à communiquer avec m1. Le taux de perte des paquets est de 100 %.
+  On voit que avec 80 % de dysfonctionnements, on n'arrive plus à communiquer avec m1. Le taux de perte des paquets est de 100 %.
 
 ## Annexe
 

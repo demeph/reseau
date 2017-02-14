@@ -103,9 +103,7 @@ default         192.168.1.254   0.0.0.0         UG    0      0        0 eth0
 ```
 
 La différence en utilisant la configuration par défaut est que la machine m3 fait maintenant office de passerelle pour tous les réseaux et plus seulement entre les réseaux LAN1 et LAN2 que l'on a créé.
-De plus, la commande route met beaucoup plus de temps à afficher la ligne correspondant à la passerelle lorsqu'elle est configurée par défaut.
-
-Pour observer cette différence, il faudrait chercher à joindre un autre réseau et utiliser un outil comme wireshark pour analyser les trames.
+De plus, la commande route met beaucoup plus de temps à afficher la ligne correspondant à la passerelle lorsqu'elle est configurée par défaut. Pour observer cette différence, il faudrait chercher à joindre un autre réseau et utiliser un outil comme wireshark pour analyser les trames.
 
 ## Le rôle de ICMP dans le routage IP : un cas de figure
 
@@ -257,4 +255,3 @@ Une fois la passerelle configurée, le ping $m1 \rightarrow m4$ fonctionne final
 11:58:20.400865 IP 192.168.1.1 > 10.10.0.4: ICMP echo request,id 11530,seq 83,length 64
 11:58:20.400925 IP 10.10.0.4 > 192.168.1.1: ICMP echo reply,id 11530,seq 83,length 64
 ```
-
