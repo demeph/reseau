@@ -19,10 +19,31 @@ où x est le numéro de la machine
 
 ajoutons m5 au réseau LAN3 :
 ```
-ifconfig eth0:lan3 10.10.10.5/24
+# ifconfig eth0:lan3 10.10.10.5/24
 ```
 
 même chose pour m6 :
 ```
-ifconfig eth0:lan3 10.10.10.6/24
+# ifconfig eth0:lan3 10.10.10.6/24
 ```
+
+On teste les connexions :
+
+$m6 rightarrow m1$ (sur LAN1)
+```
+# 
+```
+
+$m6 rightarrow m5$ (sur LAN3)
+```
+# 
+```
+
+$m1 rightarrow m2$ (respectivement sur LAN1 et LAN2)
+```
+# 
+```
+
+On constate que les deux premiers pings sont un succès tandis que le dernier ping ne fonctionne pas. La raison derrière ce comportement est que les machines m1 et m2 ne sont pas sur le même réseau et qu'aucune passerelle entre ces réseaux n'est configurée.
+
+## Polarité MDI/MDI-X
