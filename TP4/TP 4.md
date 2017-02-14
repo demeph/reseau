@@ -1,4 +1,4 @@
- *JAMET Félix - PHALAVANDISHVILI Demetre*
+.. *JAMET Félix - PHALAVANDISHVILI Demetre*
 
 # TP 4 - Étude des protocoles UDP et TCP#
 
@@ -57,11 +57,11 @@ Domain Name System (query)
 
 - le checksum de la partie UDP
 
-  ​	Le contrôle de somme(checksum) permet de s'assurer de l'intégrité du paquet reçu quand elle est différente de zéro. Elle est calculée sur l'ensemble de l'en-tête UDP et des données, mais aussi sur un pseudo en-tête;
+  ​	La somme de contrôle (checksum) permet de s'assurer de l'intégrité du paquet reçu. Elle est calculée sur l'ensemble de l'en-tête UDP et des données, mais aussi sur un pseudo en-tête
 
 - transaction ID de la partie DNS
 
-  ​	L'ID de transaction est créé par l'expéditeur du message (dans notre cas, m1) et est copié par le récepteur (ici, m2) dans son message de réponse. À l'aide de l'ID de transaction, le client DNS peut correspondre à des réponses à ses demandes
+  ​	L'ID de transaction est créé par l'expéditeur du message (dans notre cas, m1) et est copié par le récepteur (ici, m2) dans son message de réponse. À l'aide de l'ID de transaction, le client DNS peut faire correspondre des réponses à ses demandes
 
 # what ?
 
@@ -88,14 +88,14 @@ No.     Time        Source                Destination           Protocol Info
   11 0.113213    192.168.1.2           192.168.1.1           TCP      http > apocd [ACK] Seq=298 Ack=217 Win=6864
 ```
 
-- l'ordre des trames ainsi que les numéros des sequences et des accusés de réception sont exactement les mêmes que dans la feuille de TP. La seule difference que l'on observe est une différence dans le nom de machine : on a apocd aulieu de m1.
-- les trois premières trames correspondent à l'ouverture d'une connexion *TCP* entre les machine m1 et m2. La machine m1 est le client et la machine m2 est le serveur. la première trame signifie que le client demande au serveur d'ouvrir une connexion en envoyant l'indicateur SYN. Le serveur (m2) alloue un socket et l'associe au socket client (m1). Ensuite, le serveur réponds à la demande de connexion SYN en envoyant un accusé de réception ACK (ACK= seqInitial +1= 0 + 1 = 1) avec sa propre requête de synchronisation (SYN). Puis le client reçoit le message du serveur et réponds par un accusé de réception. À partir de là, la connexion TCP est complètement établie entre le client et serveur.
+- l'ordre des trames ainsi que les numéros des sequences et des accusés de réception sont exactement les mêmes que dans la feuille de TP. La seule difference que l'on observe est une différence dans le nom de machine : on a apocd au lieu de m1.
+- les trois premières trames correspondent à l'ouverture d'une connexion *TCP* entre les machine m1 et m2. La machine m1 est le client et la machine m2 est le serveur. la première trame signifie que le client demande au serveur d'ouvrir une connexion en envoyant l'indicateur SYN. Le serveur (m2) alloue un socket et l'associe au socket client (m1). Ensuite, le serveur répond à la demande de connexion SYN en envoyant un accusé de réception ACK (ACK= seqInitial +1= 0 + 1 = 1) avec sa propre requête de synchronisation (SYN). Puis le client reçoit le message du serveur et répond par un accusé de réception. À partir de là, la connexion TCP est complètement établie entre le client et serveur.
 
-### Question 3
+### Question 2
 
 ​	En comparant notre capture d'écran avec la capture d'écran de la feuille de TP, on voit que les champs différents sont le numéro du port, le nom de la machine et le checksum ( la somme de contrôle ). Tous les autres champs sont identiques.
 
-​	Dans la feuille de TP, le port utilisé est *2657* et le nom de	machine est *m1*, mais dans notre capture on voit que le port utilisé est *3809* et le nom de la machine est  *apocd*. Dans la liste des ports TCP de l'organisation IANA, on trouve que le port 3809 correspond à *Java Desktop System Configuration Agent* qui a comme le nom service *apocd*. 
+​	Dans la feuille de TP, le port utilisé est *2657* et le nom de	machine est *m1*, mais dans notre capture on voit que le port utilisé est *3809* et le nom de la machine est  *apocd*. Dans la liste des ports TCP de l'organisation IANA, on trouve que le port 3809 correspond à *Java Desktop System Configuration Agent* qui a comme nom de service *apocd*. 
 
 
 
@@ -122,11 +122,11 @@ No.     Time        Source             Destination        Protocol              
 
 ​	Avant de forcer la terminaison du processus *netcat*, on voit dans le terminal de m1 la requête HTTP envoyée à m2 et la machine 1 est  l'attente de la reponse de la part de m2.
 # idontgetit
-Mais *netcat* est un utilitaire permettant d'ouvrir des connexions réseau, donc m1 ne recevera pas de reponse. Après avoir forcé l'arrêt du processus *netcat*, on voit que m2 signale la fin de la connexion en envoyant l'indicateur *FIN* et un accusé de réception. Par la suite, m1 réponds qu'il a bien reçu la demande de fin de la connexion et renvoie à http l'indicateur *Fin* +  *Ack*. Ensuite http envoie un accusé de réception. À partir de là, on peut déduire que la connexion est terminée. La ligne 8 nous montre donc que netcat a bien la *"politesse"* d'envoyer un datagramme de fin de connexion TCP.
+Mais *netcat* est un utilitaire permettant d'ouvrir des connexions réseau, donc m1 ne recevera pas de réponse. Après avoir forcé l'arrêt du processus *netcat*, on voit que m2 signale la fin de la connexion en envoyant l'indicateur *FIN* et un accusé de réception. Par la suite, m1 réponds qu'il a bien reçu la demande de fin de la connexion et renvoie à http l'indicateur *Fin* +  *Ack*. Ensuite http envoie un accusé de réception. À partir de là, on peut déduire que la connexion est terminée. La ligne 8 nous montre donc que netcat a bien la *"politesse"* d'envoyer un datagramme de fin de connexion TCP.
 
 ### Fiabilité d'une connexion TCP
 
- 	Dans l'onglet *Anomalies de marionnet*, on choisit la ligne correspondante au câble croisé (c1) et on modelise le dysfonctionnement suivant :
+ 	Dans l'onglet *Anomalies de marionnet*, on choisit la ligne correspondante au câble croisé (c1) et on modélise les dysfonctionnements suivants :
 
 - to m1 = 20 % & to m2 = 20 %
 
@@ -190,7 +190,7 @@ Mais *netcat* est un utilitaire permettant d'ouvrir des connexions réseau, donc
   rtt min/avg/max/mdev = 0.507/1.056/3.088/0.565 ms
   ```
 
-Sur 40 paquets transmis, on remarque que, le plus grand écart entre les paquets successifs perdus est 6 (entre 26 et 33).
+Sur les 40 paquets transmis, on remarque que, le plus grand écart entre les paquets successifs perdus est 6 (entre 26 et 33).
 
 - to m1 = 60 % & to m2 = 60 %
 
@@ -215,7 +215,7 @@ Sur 40 paquets transmis, on remarque que, le plus grand écart entre les paquets
   rtt min/avg/max/mdev = 0.687/1.004/1.262/0.154 ms, pipe 3
   ```
 
-On remarque qu'il a été difficile d'atteindre m1 à cause d'une trop grande perte de paquets et que le premier paquet arrivé sur la machine m1 est le paquet numéro 16.
+	On remarque qu'il a été difficile d'atteindre m1 à cause d'une trop grande perte de paquets et que le premier paquet arrivé sur la machine m1 est le paquet numéro 16.
 
 - to m1 = 80 % & to m2 = 80 %
 
@@ -250,7 +250,7 @@ On remarque qu'il a été difficile d'atteindre m1 à cause d'une trop grande pe
 
   ```
 
-  On voit que des que le taux de perte des paquets ateint 80 %, on n'arrive plus à communiquer avec m1. Le taux de perte des paquets est de 100 %.
+	On voit que avec 80 % de dysfonctionnements, on n'arrive plus à communiquer avec m1. Le taux de perte des paquets est de 100 %.
 
 ## Annexe
 
