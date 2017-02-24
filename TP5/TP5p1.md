@@ -1,4 +1,6 @@
-root
+***PHALAVANDISHVILI Demetre - JAMET Félix - Groupe 601B***
+
+# TP5 Partie 1#
 
 ## Câblage et configuration de base
 
@@ -100,3 +102,118 @@ On constate que quand on remplace un câble croisé  par un cable droit entre le
 
 ## non Etanchéité
 
+### Broadcast *ARP*
+
+Quand on lance la commande de ping de m1 $\rightarrow$ m5, sur ***tcpdump*** de la machine 4 on voit une trame ARP en demandant qui a l'adresse de la machine 5 :
+
+```
+12:57:07.818536 arp who-has 194.85.40.5 tell 194.85.40.1
+```
+### Broadcast DHCP
+
+En suivant les etapes décrit dans la feuille de TP, on a definit la plage des adresses IP sur m1 & m2:
+
+- m1 :
+
+  ```
+  subnet 194.85.40.0 netmask 255.255.252.0
+  {
+    194.85.40.51 192.85.40.99
+  }
+  ```
+
+- m2
+
+  ```
+  subnet 194.85.44.0 netmask 255.255.252.0
+  {
+    194.85.44.51 192.85.44.99
+  }
+  ```
+
+  ​
+
+En suite on a ajouté trois machines m7, m8, m9, la machine m7 est branché sur le switch 1, m8 au switch 3 et m9 à switch 2. Après on lance la commande suivante sur ces machines :
+
+```
+dhclient eth0
+```
+
+et on obtient les resultats suivantes :
+
+- m7
+
+```
+Internet Systems Consortium DHCP Client V3.0.5
+Copyright 2004-2006 Internet Systems Consortium.
+All rights reserved.
+For info, please visit http://www.isc.org/sw/dhcp/
+
+Listening on LPF/eth0/02:04:06:e6:f6:28
+Sending on   LPF/eth0/02:04:06:e6:f6:28
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 7
+DHCPOFFER from 194.85.44.2
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPNAK from 194.85.40.1
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 5
+receive_packet failed on eth0: Network is down
+DHCPOFFER from 194.85.44.2
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPNAK from 194.85.40.1
+DHCPACK from 194.85.44.2
+SIOCADDRT: Network is unreachable
+bound to 194.85.44.98 -- renewal in 263 seconds.
+```
+
+- m8
+
+```
+Internet Systems Consortium DHCP Client V3.0.5
+Copyright 2004-2006 Internet Systems Consortium.
+All rights reserved.
+For info, please visit http://www.isc.org/sw/dhcp/
+
+Listening on LPF/eth0/02:04:06:02:07:90
+Sending on   LPF/eth0/02:04:06:02:07:90
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 7
+DHCPOFFER from 194.85.40.1
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPNAK from 194.85.44.2
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 6
+receive_packet failed on eth0: Network is down
+DHCPOFFER from 194.85.40.1
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPNAK from 194.85.44.2
+DHCPACK from 194.85.40.1
+SIOCADDRT: Network is unreachable
+bound to 194.85.40.98 -- renewal in 267 seconds.
+```
+
+- m9
+
+```
+Internet Systems Consortium DHCP Client V3.0.5
+Copyright 2004-2006 Internet Systems Consortium.
+All rights reserved.
+For info, please visit http://www.isc.org/sw/dhcp/
+
+Listening on LPF/eth0/02:04:06:f0:af:a7
+Sending on   LPF/eth0/02:04:06:f0:af:a7
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3
+DHCPOFFER from 194.85.40.1
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPNAK from 194.85.44.2
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4
+receive_packet failed on eth0: Network is down
+DHCPOFFER from 194.85.40.1
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPNAK from 194.85.44.2
+DHCPACK from 194.85.40.1
+SIOCADDRT: Network is unreachable
+bound to 194.85.40.96 -- renewal in 260 seconds.
+```
+
+On voit que ces adresses IP vont être reinitialiser dans le certain temps(ici en moyenne 260 secondes). De plus on voit que la machine m7 et m9 appartient au $LAN_{1}$ et la machine m8 appartient au $LAN_{2}$.
