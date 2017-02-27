@@ -4,27 +4,29 @@
 
 ## Câblage et configuration de base
 
-ifconfig eth0 194.85.44.2/22 donne une erreur lorsque tapé une fois. comme l'adresse commence par 194, ifconfig s'attends à une adresse de classe C avec un masque de sous réseau d'au moins 24 bits
+Pour segmenter la plage réseau en deux parties, on ajoute un bit à la partie réseau de l'adresse, celle ci passant sur 22 bits. On créé de cette manière la plage 194.85.44.2/22 et la plage 194.85.40.2/22.
 
-on configure les machines du réseau LAN1 comme suit :
+```ifconfig eth0 194.85.44.2/22``` donne une erreur lorsque tapé une fois. En effet, l'adresse commençant par 194, ifconfig s'attend à une adresse de classe C avec un masque de sous réseau d'au moins 24 bits. En retapant la commande, elle est acceptée
+
+On configure les machines du réseau LAN1 comme suit :
 ```
 # ifconfig eth0 194.85.40.x/22
 ```
-et les machines du réseau LAN2 comme suit :
+On configure les machines du réseau LAN2 comme suit :
 ```
 # ifconfig eth0 194.85.44.x/22
 ```
 
-où x est le numéro de la machine
+Où x est le numéro de la machine
 
 ### Utilisation des alias de carte
 
-ajoutons m5 au réseau LAN3 :
+Ajoutons m5 au réseau LAN3 :
 ```
 # ifconfig eth0:lan3 10.10.10.5/24
 ```
 
-même chose pour m6 :
+Même chose pour m6 :
 ```
 # ifconfig eth0:lan3 10.10.10.6/24
 ```
@@ -69,7 +71,7 @@ m1 -> m2
 connect: Network is unreachable
 ```
 
-On constate que les deux premiers pings sont un succès tandis que le dernier ping ne fonctionne pas. La raison derrière ce comportement est que les machines m1 et m2 ne sont pas sur le même réseau et qu'aucune passerelle entre ces réseaux n'est pas configurée.
+On constate que les deux premiers pings sont un succès tandis que le dernier ping ne fonctionne pas. La raison de ce comportement est que les machines m1 et m2 ne sont pas sur le même réseau et qu'aucune passerelle entre ces réseaux n'est configurée.
 
 ## Polarité MDI/MDI-X
 
@@ -77,6 +79,22 @@ On constate que les deux premiers pings sont un succès tandis que le dernier pi
 
 ```
  ping 194.85.40.6
+ [...]
+64 bytes from 194.85.40.1: icmp_seq=14 ttl=64 time=1.92 ms
+64 bytes from 194.85.40.1: icmp_seq=15 ttl=64 time=1.87 ms
+64 bytes from 194.85.40.1: icmp_seq=16 ttl=64 time=1.82 ms
+64 bytes from 194.85.40.1: icmp_seq=17 ttl=64 time=2.16 ms
+64 bytes from 194.85.40.1: icmp_seq=18 ttl=64 time=2.04 ms
+64 bytes from 194.85.40.1: icmp_seq=19 ttl=64 time=2.92 ms
+64 bytes from 194.85.40.1: icmp_seq=20 ttl=64 time=7.55 ms
+64 bytes from 194.85.40.1: icmp_seq=21 ttl=64 time=2.24 ms
+64 bytes from 194.85.40.1: icmp_seq=22 ttl=64 time=1.98 ms
+64 bytes from 194.85.40.1: icmp_seq=23 ttl=64 time=1.92 ms
+From 194.85.40.6 icmp_seq=24 Destination Host Unreachable
+From 194.85.40.6 icmp_seq=25 Destination Host Unreachable
+From 194.85.40.6 icmp_seq=26 Destination Host Unreachable
+From 194.85.40.6 icmp_seq=27 Destination Host Unreachable
+From 194.85.40.6 icmp_seq=28 Destination Host Unreachable
 From 194.85.40.6 icmp_seq=29 Destination Host Unreachable
 From 194.85.40.6 icmp_seq=30 Destination Host Unreachable
 From 194.85.40.6 icmp_seq=31 Destination Host Unreachable
@@ -88,30 +106,32 @@ From 194.85.40.6 icmp_seq=37 Destination Host Unreachable
 From 194.85.40.6 icmp_seq=38 Destination Host Unreachable
 64 bytes from 194.85.40.1: icmp_seq=39 ttl=64 time=1025 ms
 64 bytes from 194.85.40.1: icmp_seq=40 ttl=64 time=19.7 ms
-64 bytes from 194.85.40.1: icmp_seq=41 ttl=64 time=1.82 ms
-64 bytes from 194.85.40.1: icmp_seq=42 ttl=64 time=2.16 ms
-64 bytes from 194.85.40.1: icmp_seq=43 ttl=64 time=2.34 ms
-64 bytes from 194.85.40.1: icmp_seq=44 ttl=64 time=2.92 ms
-64 bytes from 194.85.40.1: icmp_seq=45 ttl=64 time=7.55 ms
-64 bytes from 194.85.40.1: icmp_seq=46 ttl=64 time=2.24 ms
-64 bytes from 194.85.40.1: icmp_seq=47 ttl=64 time=1.98 ms
-64 bytes from 194.85.40.1: icmp_seq=48 ttl=64 time=1.92 ms
+64 bytes from 194.85.40.1: icmp_seq=41 ttl=64 time=2.02 ms
+64 bytes from 194.85.40.1: icmp_seq=42 ttl=64 time=2.17 ms
+64 bytes from 194.85.40.1: icmp_seq=43 ttl=64 time=1.80 ms
+64 bytes from 194.85.40.1: icmp_seq=44 ttl=64 time=1.92 ms
+64 bytes from 194.85.40.1: icmp_seq=45 ttl=64 time=2.55 ms
+64 bytes from 194.85.40.1: icmp_seq=46 ttl=64 time=7.11 ms
+64 bytes from 194.85.40.1: icmp_seq=47 ttl=64 time=3.51 ms
+64 bytes from 194.85.40.1: icmp_seq=48 ttl=64 time=2.55 ms
 ```
 
-On constate que quand on remplace un câble croisé  par un cable droit entre le switch 1 et 2, on voit que on  n'arrive pas joindre la machine 6 (m6). 
+On constate que quand on remplace un câble croisé par un cable droit entre le switch 1 et 2, on n'arrive pas à joindre la machine 6 (m6) depuis m1. Le ping refonctionne normalement en rebranchant le câble croisé
 
-## non Etanchéité
+
+
+## Non Etanchéité
 
 ### Broadcast *ARP*
 
-Quand on lance la commande de ping de m1 $\rightarrow$ m5, sur ***tcpdump*** de la machine 4 on voit une trame ARP en demandant qui a l'adresse de la machine 5 :
+Quand on lance la commande de ping de m1 $\rightarrow$ m5, on voit sur le ***tcpdump*** de la machine 4 une trame ARP demandant à qui correspond l'adresse de la machine 5 :
 
 ```
 12:57:07.818536 arp who-has 194.85.40.5 tell 194.85.40.1
 ```
 ### Broadcast DHCP
 
-En suivant les etapes décrit dans la feuille de TP, on a definit la plage des adresses IP sur m1 & m2:
+En suivant les etapes décrites dans la feuille de TP, nous avons défini la plage des adresses IP sur m1 & m2 :
 
 - m1 :
 
@@ -120,6 +140,7 @@ En suivant les etapes décrit dans la feuille de TP, on a definit la plage des a
   {
     194.85.40.51 192.85.40.99
   }
+  ddns-update-style none;
   ```
 
 - m2
@@ -129,17 +150,19 @@ En suivant les etapes décrit dans la feuille de TP, on a definit la plage des a
   {
     194.85.44.51 192.85.44.99
   }
+  ddns-update-style none;
   ```
 
   ​
 
-En suite on a ajouté trois machines m7, m8, m9, la machine m7 est branché sur le switch 1, m8 au switch 3 et m9 à switch 2. Après on lance la commande suivante sur ces machines :
+Ensuite, nous avons ajouté les machines m7, m8 et m9. La machine m7 est branchée sur le switch 1, m8 sur le switch 3 et m9 sur le switch 2.
+Puis nous avons lancé une demande d'affectation d'adresse ip avec la commande suivante :
 
 ```
 dhclient eth0
 ```
 
-et on obtient les resultats suivantes :
+On obtient comme résultats :
 
 - m7
 
@@ -216,4 +239,4 @@ SIOCADDRT: Network is unreachable
 bound to 194.85.40.96 -- renewal in 260 seconds.
 ```
 
-On voit que ces adresses IP vont être reinitialiser dans le certain temps(ici en moyenne 260 secondes). De plus on voit que la machine m7 et m9 appartient au $LAN_{1}$ et la machine m8 appartient au $LAN_{2}$.
+On voit que ces adresses IP vont être renouvelées dans un certain temps(ici en moyenne 260 secondes). De plus on voit que la machine m7 et m9 appartient au $LAN_{1}$ et la machine m8 appartient au $LAN_{2}$.
