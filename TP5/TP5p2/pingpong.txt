@@ -1,0 +1,53 @@
+sur LAN 2
+m2 -> m4
+ping -c 5 195.12.60.4
+PING 195.12.60.4 (195.12.60.4): 56 data bytes
+64 bytes from 195.12.60.4: icmp_seq=0 ttl=64 time=21.599 ms
+64 bytes from 195.12.60.4: icmp_seq=1 ttl=64 time=1.364 ms
+64 bytes from 195.12.60.4: icmp_seq=2 ttl=64 time=1.724 ms
+64 bytes from 195.12.60.4: icmp_seq=3 ttl=64 time=2.261 ms
+64 bytes from 195.12.60.4: icmp_seq=4 ttl=64 time=1.987 ms
+--- 195.12.60.4 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max/stddev = 1.364/5.787/21.599/7.912 ms
+
+LAN2 -> LAN1
+m2 -> m1
+ping -c 5 195.12.56.1
+PING 195.12.56.1 (195.12.56.1): 56 data bytes
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+--- 195.12.56.1 ping statistics ---
+0 packets transmitted, 0 packets received, 
+
+sur LAN 1
+m1-> m3
+ping -c 5 195.12.56.3
+PING 195.12.56.3 (195.12.56.3): 56 data bytes
+64 bytes from 195.12.56.3: icmp_seq=0 ttl=64 time=21.464 ms
+64 bytes from 195.12.56.3: icmp_seq=1 ttl=64 time=1.867 ms
+64 bytes from 195.12.56.3: icmp_seq=2 ttl=64 time=2.112 ms
+64 bytes from 195.12.56.3: icmp_seq=3 ttl=64 time=1.943 ms
+64 bytes from 195.12.56.3: icmp_seq=4 ttl=64 time=2.302 ms
+--- 195.12.56.3 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max/stddev = 1.867/5.938/21.464/7.765 ms
+
+LAN 1 -> LAN 2
+m1 -> m5
+ping -c 5 195.12.60.5
+PING 195.12.60.5 (195.12.60.5): 56 data bytes
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+ping: sendto: Network is unreachable
+--- 195.12.60.5 ping statistics ---
+0 packets transmitted, 0 packets received,

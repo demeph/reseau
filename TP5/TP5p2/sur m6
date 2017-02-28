@@ -1,0 +1,14 @@
+sur m6
+
+11:51:54.543476 IP 0.0.0.0.bootpc > 255.255.255.255.bootps: BOOTP/DHCP, Request from 02:04:06:5b:97:3a (oui Unknown), length 300
+11:51:54.572880 arp who-has 195.12.56.99 tell 195.12.56.1
+11:51:55.006159 IP 0.0.0.0.bootpc > 255.255.255.255.bootps: BOOTP/DHCP, Request from 02:04:06:5b:97:3a (oui Unknown), length 300
+11:51:55.570818 arp who-has 195.12.56.99 tell 195.12.56.1
+
+
+sur m5
+
+11:51:54.543638 IP 0.0.0.0.bootpc > 255.255.255.255.bootps: BOOTP/DHCP, Request from 02:04:06:5b:97:3a (oui Unknown), length 300
+11:51:54.572760 arp who-has 195.12.56.99 tell 195.12.56.1
+11:51:55.006051 IP 0.0.0.0.bootpc > 255.255.255.255.bootps: BOOTP/DHCP, Request from 02:04:06:5b:97:3a (oui Unknown), length 300
+11:51:55.570942 arp who-has 195.12.56.99 tell 195.12.56.1
