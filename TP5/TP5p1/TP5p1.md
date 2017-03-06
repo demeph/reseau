@@ -239,4 +239,4 @@ SIOCADDRT: Network is unreachable
 bound to 194.85.40.96 -- renewal in 260 seconds.
 ```
 
-On voit que ces adresses IP vont être renouvelées dans un certain temps(ici en moyenne 260 secondes). De plus on voit que la machine m7 et m9 appartient au $LAN_{1}$ et la machine m8 appartient au $LAN_{2}$.
+On voit que ces adresses IP vont être renouvelées dans un certain temps(ici en moyenne 260 secondes). De plus on voit que la machine m7 et m9 appartient au $LAN_{1}$ et la machine m8 appartient au $LAN_{2}$.​
