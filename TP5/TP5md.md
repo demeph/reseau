@@ -249,7 +249,7 @@ On voit que ces adresses IP vont être renouvelées dans un certain temps(ici en
 
 Pour segmenter la plage réseau en deux parties, on ajoute un bit à la partie réseau de l'adresse, celle ci passant sur 22 bits. On créé de cette manière la plage 195.12.56.0/22 et la plage 195.12.60.2/22.
 
-```ifconfig eth0 195.12.60.2/22``` donne une erreur lorsque tapé une fois. En effet, l'adresse commençant par 194, ifconfig s'attend à une adresse de classe C avec un masque de sous réseau d'au moins 24 bits. En retapant la commande, elle est acceptée
+```ifconfig eth0 195.12.60.2/22``` donne une erreur lorsque tapé une fois. En effet, l'adresse commençant par 194, ifconfig s'attend à une adresse de classe C avec un masque de sous réseau d'au moins 24 bits. En retapant la commande, elle est acceptée.
 
 On configure les machines du réseau LAN1 comme suit :
 
@@ -265,7 +265,7 @@ On configure les machines du réseau LAN2 comme suit :
 
 Où x est le numéro de la machine
 
-### Teste de la connexion
+### Test de la connexion
 
 - sur Lan2
 
@@ -336,9 +336,9 @@ Où x est le numéro de la machine
     0 packets transmitted, 0 packets received,
     ```
 
-Les résultats obtenu entre les different LAN est toute a fait logique, car on a configuré aucun passerelle.
+Les résultats obtenu entre les différents LANs est tout à fait logique, car aucune passerelle n'as été configurée.
 
-## Non étachéité du reseau
+## Constater la non étanchéité
 
 ​	Comme dans la partie 1, on modifie le fichier */etc/dhcp.conf* sur les machines 1 et 2,appartenant au $LAN_{1}$ et au $LAN_ {2}$ respectivement.
 
@@ -364,11 +364,11 @@ Les résultats obtenu entre les different LAN est toute a fait logique, car on a
 
   ​
 
-### Testons non étanchéité
+### Tests de non étanchéité
 
 #### Diffusion ARP
 
-​	Pout tester que notre reseau n'est pas etanche, on lance un ping de la machine m3 vers la machine 5 et on observe le resultat dans le termina de la machine 2 et 5 en utilisant le programme *tcpdump*. Voici les captures :
+​	Pout tester l'étanchéité de notre réseau, on lance un ping de la machine m3 vers la machine m5 et on observe le résultat dans le terminal de la machine m2, en utilisant le programme *tcpdump* dont voici les captures :
 
 - ping m3->m5
 
@@ -389,7 +389,7 @@ Les résultats obtenu entre les different LAN est toute a fait logique, car on a
   22:05:15.837319 arp who-has 195.12.56.5 tell 195.12.56.3
   ```
 
-- captrue de *tcpdump* sur la machine m5
+- capture de *tcpdump* sur la machine m5
 
   ```
           0x0010:  0000                                     ..
@@ -404,13 +404,13 @@ Les résultats obtenu entre les different LAN est toute a fait logique, car on a
   22:05:20.844352 arp who-has 195.12.56.3 tell 195.12.56.5
   ```
 
-  Le ping réalisé est lancé la connextion entre les machines 3 et 5 qui appartient au $LAN_{1}$, mais on voit la demande *arp* sur la machine m2 qui n'appartient pas au $LAN_{1}$. Donc on peut deduire que notre reseau n'est pas etanche.
+  Le ping est lancé entre les machines m3 et m5 qui appartiennent au $LAN_{1}$. Cependant, on voit la demande *arp* sur la machine m2 qui n'appartient pas au $LAN_{1}$. On peut donc en déduire que notre réseau n'est pas étanche.
 
 #### Diffusion DHCP
 
-Après avoir configuré DHCP basique on lance ```dhclient etho``` sur la machine 2. On voit que cette demande est diffusé sur $LAN_{1}$ et $LAN_{2}$ car dans le terminal des machines m3 et m5 on voit la demande DHCP qui est transmis. Voici les captures :
+Après avoir configuré un DHCP basique, on lance ```dhclient etho``` sur la machine 2. On voit que cette demande est diffusée sur $LAN_{1}$ et $LAN_{2}$ car dans le *tcpdump* lancé sur les machines m3 et m5, on observe la demande DHCP. Voici les captures :
 
-- machine m2
+- machine m2 :
 
   ```
    dhclient eth0
@@ -434,7 +434,7 @@ Après avoir configuré DHCP basique on lance ```dhclient etho``` sur la machine
   bound to 195.12.56.99 -- renewal in 301 seconds.
   ```
 
-- sur la machine m3
+- machine m3 :
 
   ```
   22:16:57.990989 IP 0.0.0.0.bootpc > 255.255.255.255.bootps: BOOTP/DHCP, Request from 02:04:06:ca:c4:6e (oui Unknown), length 300
@@ -448,7 +448,7 @@ Après avoir configuré DHCP basique on lance ```dhclient etho``` sur la machine
   22:16:59.449362 IP 195.12.60.2.bootps > 255.255.255.255.bootpc: BOOTP/DHCP, Reply, length 300
   ```
 
-- sur la machine m5
+- machine m5 :
 
   ```
   22:16:58.002489 IP 195.12.60.2.bootps > 255.255.255.255.bootpc: BOOTP/DHCP, Reply, length 300
@@ -460,20 +460,20 @@ Après avoir configuré DHCP basique on lance ```dhclient etho``` sur la machine
   22:16:59.450286 IP 195.12.60.2.bootps > 255.255.255.255.bootpc: BOOTP/DHCP, Reply, length 300
   ```
 
-  On voit que la réseaux n'est etanche car DHCP est diffusé sur LAN2.
+  On voit que le réseau n'est pas étanche car DHCP est diffusé sur LAN2.
 
   ## VLANs
 
   ## Configuration des VLANs
 
-  ​	Pour modeliser les VLANs on utiise la commande suivnate dansla terminal de switch 1:
+  ​	Pour modéliser les VLANs on utilise la commande suivante dans le terminal du switch s1:
 
   ```
   vlan/create 1
   vlan/create 2
   ```
 
-  ​	En frappant ces deux commandes on a crée deux LANs differents : $LAN_{1}$ et $LAN_{2}$. Ensuite on affecte les ports au differant LAN. Pour diminuer la probabilité d'inversion de deux leds on a prix un switch avec 12 ports et on a relier tous les ports avec numero impaires aux machines/
+  ​	En tapant ces deux commandes, on a crée deux LANs différents : $LAN_{1}$ et $LAN_{2}$. On affecte ensuite aux LANs leur ports respectifs. Pour éviter l'inversion de deux leds voisines, nous prix un switch avec 12 ports et on a relier tous les ports avec numero impaires aux machines/
 
   Voici l'association des ports en utilisant la commande *port/setvlan*:
 
