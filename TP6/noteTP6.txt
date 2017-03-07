@@ -1,0 +1,70 @@
+routeur donne l'acces au ordi de reseau acces au reseau public, il remplace leur adresse pprivé par l'adresse public de route
+
+source :
+www.iptables.org
+www.netfilter.org/documentation/howto/fr/packet-filtering-howto-1/html
+
+chaine  = liste des regles (Ordonnes)
+		- input
+		- output
+Regles - forward
+
+Nat = Network adress Translation
+
+s = sender
+D = destination
+
+Postrouting : -A 
+Prerouting  : -
+
+- test ping : m1 -> intrus
+ ping 145.12.0.42 
+PING 145.12.0.42 (145.12.0.42) 56(84) bytes of data.
+64 bytes from 145.12.0.42: icmp_seq=1 ttl=63 time=14.6 ms
+64 bytes from 145.12.0.42: icmp_seq=2 ttl=63 time=2.68 ms
+64 bytes from 145.12.0.42: icmp_seq=3 ttl=63 time=2.48 ms
+64 bytes from 145.12.0.42: icmp_seq=4 ttl=63 time=2.94 ms
+64 bytes from 145.12.0.42: icmp_seq=5 ttl=63 time=2.81 ms
+
+- capture des trams de tcpdump sur intrus:
+13:22:28.590864 arp who-has 145.12.0.42 tell 145.12.0.53
+13:22:28.590917 arp reply 145.12.0.42 is-at 02:04:06:d9:77:54 (oui Unknown)
+13:22:28.591827 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 47112, seq 1, length 64
+13:22:28.591887 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 47112, seq 1, length 64
+13:22:28.599265 IP 145.12.0.42.3075 > 85.37.17.55.domain: 3375+ PTR? 42.0.12.145.in-addr.arpa. (42)
+13:22:29.588377 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 47112, seq 2, length 64
+13:22:29.588432 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 47112, seq 2, length 64
+13:22:30.604036 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 47112, seq 3, length 64
+13:22:30.604087 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 47112, seq 3, length 64
+13:22:31.608266 IP 145.12.0.53 > 145.12.0.42: ICMP host 85.37.17.55 unreachable, length 78
+13:22:31.610524 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 47112, seq 4, length 64
+13:22:31.610575 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 47112, seq 4, length 64
+13:22:32.617744 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 47112, seq 5, length 64
+13:22:32.617798 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 47112, seq 5, length 64
+
+les trams arrivent avec uu retard de quelques secondes.
+
+m3 -> intrus
+PING 145.12.0.42 (145.12.0.42) 56(84) bytes of data.
+64 bytes from 145.12.0.42: icmp_seq=1 ttl=63 time=37.0 ms
+64 bytes from 145.12.0.42: icmp_seq=2 ttl=63 time=2.57 ms
+64 bytes from 145.12.0.42: icmp_seq=3 ttl=63 time=3.07 ms
+64 bytes from 145.12.0.42: icmp_seq=4 ttl=63 time=3.30 ms
+64 bytes from 145.12.0.42: icmp_seq=5 ttl=63 time=3.28 ms
+64 bytes from 145.12.0.42: icmp_seq=6 ttl=63 time=1.87 ms
+
+--- 145.12.0.42 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5046ms
+rtt min/avg/max/mdev = 1.877/8.532/37.083/12.778 ms
+
+intrus: 
+13:32:13.462637 arp who-has 145.12.0.53 tell 145.12.0.42
+13:32:13.463961 arp reply 145.12.0.53 is-at 02:04:06:95:ad:2f (oui Unknown)
+13:32:13.464928 IP 145.12.0.42.3082 > 85.37.17.55.domain: 47512+ PTR? 3.0.0.10.in-addr.arpa. (39)
+13:32:16.486962 IP 145.12.0.53 > 145.12.0.42: ICMP host 85.37.17.55 unreachable, length 75
+13:32:18.474276 IP 145.12.0.42.3083 > 85.38.28.93.domain: 47512+ PTR? 3.0.0.10.in-addr.arpa. (39)
+13:32:21.497510 IP 145.12.0.53 > 145.12.0.42: ICMP host 85.38.28.93 unreachable, length 75
+13:32:23.484471 IP 145.12.0.42.3082 > 85.37.17.55.domain: 47512+ PTR? 3.0.0.10.in-addr.arpa. (39)
+13:32:26.511903 IP 145.12.0.53 > 145.12.0.42: ICMP host 85.37.17.55 unreachable, length 75
+
+
