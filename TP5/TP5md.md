@@ -340,7 +340,7 @@ Les résultats obtenu entre les différents LANs est tout à fait logique, car a
 
 ## Constater la non étanchéité
 
-​	Comme dans la partie 1, on modifie le fichier */etc/dhcp.conf* sur les machines 1 et 2,appartenant au $LAN_{1}$ et au $LAN_ {2}$ respectivement.
+​Comme dans la partie 1, on modifie le fichier */etc/dhcp.conf* sur les machines 1 et 2,appartenant au $LAN_{1}$ et au $LAN_ {2}$ respectivement.
 
 - sur la machine 1 on fait les modifications suivantes:
 
@@ -362,13 +362,11 @@ Les résultats obtenu entre les différents LANs est tout à fait logique, car a
   ddns-update-style none;
   ```
 
-  ​
-
-### Tests de non étanchéité
+### Tests d'étanchéité
 
 #### Diffusion ARP
 
-​	Pout tester l'étanchéité de notre réseau, on lance un ping de la machine m3 vers la machine m5 et on observe le résultat dans le terminal de la machine m2, en utilisant le programme *tcpdump* dont voici les captures :
+Pour tester l'étanchéité de notre réseau, on lance un ping de la machine m3 vers la machine m5 et on observe le résultat dans le terminal de la machine m2, en utilisant le programme *tcpdump* dont voici les captures :
 
 - ping m3->m5
 
@@ -404,7 +402,7 @@ Les résultats obtenu entre les différents LANs est tout à fait logique, car a
   22:05:20.844352 arp who-has 195.12.56.3 tell 195.12.56.5
   ```
 
-  Le ping est lancé entre les machines m3 et m5 qui appartiennent au $LAN_{1}$. Cependant, on voit la demande *arp* sur la machine m2 qui n'appartient pas au $LAN_{1}$. On peut donc en déduire que notre réseau n'est pas étanche.
+Le ping est lancé entre les machines m3 et m5 qui appartiennent au $LAN_{1}$. Cependant, on voit la demande *arp* sur la machine m2 qui n'appartient pas au $LAN_{1}$. On peut donc en déduire que notre réseau n'est pas étanche.
 
 #### Diffusion DHCP
 
@@ -460,24 +458,22 @@ Après avoir configuré un DHCP basique, on lance ```dhclient etho``` sur la mac
   22:16:59.450286 IP 195.12.60.2.bootps > 255.255.255.255.bootpc: BOOTP/DHCP, Reply, length 300
   ```
 
-  On voit que le réseau n'est pas étanche car DHCP est diffusé sur LAN2.
+On voit que le réseau n'est pas étanche car DHCP est diffusé sur LAN2.
 
-  ## VLANs
+## Configurer les VLANs
 
-  ## Configuration des VLANs
-
-  ​	Pour modéliser les VLANs on utilise la commande suivante dans le terminal du switch s1:
+Pour modéliser les VLANs on utilise la commande suivante dans le terminal du switch s1:
 
   ```
   vlan/create 1
   vlan/create 2
   ```
 
-  ​	En tapant ces deux commandes, on a crée deux LANs différents : $LAN_{1}$ et $LAN_{2}$. On affecte ensuite aux LANs leur ports respectifs. Pour éviter l'inversion de deux leds voisines, nous prix un switch avec 12 ports et on a relier tous les ports avec numero impaires aux machines/
+En tapant ces deux commandes, on a crée deux LANs différents : $LAN_{1}$ et $LAN_{2}$. On affecte ensuite aux LANs leur ports respectifs. Pour éviter l'inversion de deux leds voisines, nous avons pris un switch avec 12 ports et nous avons utilisé tous les ports avec un numéro impair.
 
-  Voici l'association des ports en utilisant la commande *port/setvlan*:
+Nous associons les LANs aux ports avec la commande *port/setvlan* :
 
-  - LAN1
+- LAN1
 
   ```
   port/setvlan 1 1
@@ -485,7 +481,7 @@ Après avoir configuré un DHCP basique, on lance ```dhclient etho``` sur la mac
   port/setvlan 9 1
   ```
 
-  - LAN2 
+- LAN2 
 
   ``` 
   port/setvlan 3 2
@@ -493,13 +489,13 @@ Après avoir configuré un DHCP basique, on lance ```dhclient etho``` sur la mac
   port/setvlan 11 2
   ```
 
-  ## Test d'etanchéité
+## Test d'etanchéité
 
-  ### Diffusion ARP
+### Diffusion ARP
 
-  Pout tester que notre reseau n'est pas etanche, on lance un ping de la machine m3 vers la machine 5 et on observe le resultat dans le termina de la machine 2 et 5 en utilisant le programme *tcpdump*. Voici les captures :
+Pour tester l'étanchéité du réseau, on lance un ping de la machine m3 vers la machine m5 et on observe le traffic sur m2 avec *tcpdump*
 
-  -  ping 195.12.56.99
+- ping 195.12.56.99
 
     ```
     PING 195.12.56.99 (195.12.56.99) 56(84) bytes of data.
@@ -516,9 +512,9 @@ Après avoir configuré un DHCP basique, on lance ```dhclient etho``` sur la mac
 
     ```
 
-  - capture de *tcpdump* sur la machine m2 : aucun diffusion d'ARP sur LAN 2
+- capture de *tcpdump* sur la machine m2 : aucune diffusion d'ARP sur LAN 2
 
-  - captrue de *tcpdump* sur la machine m5
+- capture de *tcpdump* sur la machine m5
 
     ```
     23:02:21.896022 arp who-has 195.12.56.99 tell 195.12.56.1
@@ -529,13 +525,13 @@ Après avoir configuré un DHCP basique, on lance ```dhclient etho``` sur la mac
     23:02:26.920674 arp who-has 195.12.56.99 tell 195.12.56.1
     ```
 
-    Le ping réalisé est lancé la connextion entre les machines 1 et avec un adresse ip qui appartient au $LAN_{1}$, on ne  voit pas la demande *arp* sur la machine m2 qui n'appartient pas au $LAN_{1}$. Donc on peut deduire que notre reseau est etanche.
+Le ping est lancé entre deux machine de $LAN_{1}$. On ne voit pas la requête *arp* sur la machine m2 qui n'appartient pas au $LAN_{1}$. On peut donc en déduire que notre réseau est étanche.
 
 
 
 #### Diffusion DHCP
 
-Après avoir configuré DHCP basique on lance ```dhclient etho``` sur la machine 2.  Voici les captures :
+Après avoir configuré un DHCP basique on lance ```dhclient eth0``` sur la machine 2.  Voici les captures :
 
 - machine m6
 
@@ -563,11 +559,11 @@ Après avoir configuré DHCP basique on lance ```dhclient etho``` sur la machine
 
   ```
 
-- sur la machine m1 on voit aucun trame arrivé quand on lance la commande ```dhclient eth0``` .
+- sur la machine m1 on ne voit aucune trames arriver vie ```dhclient eth0``` .
 
   ​
 
-On voit que la réseaux est etanche car DHCP n'est diffusé sur LAN1. De plus, on vot pas la "course" entre deux sereurs *DHCP* comme on avat avant.
+On voit que le réseau est étanche car la requête DHCP n'est diffusée que sur LAN1. De plus, il n'y a plus de "course" entre deux serveurs *DHCP* comme il y avait avant.
 
 
 
