@@ -567,5 +567,34 @@ On voit que le réseau est étanche car la requête DHCP n'est diffusée que sur
 
 
 
-## Bonus
+## Bonus : présentation du protocole DHCP
 
+DHCP (Dynamic Host Configuration Protocol) est un protocole permettant de configurer automatiquement les machines d'un réseau. DHCP permet notamment de gérer les aspects de configuration suivants :
+- l'attribution d'adresse IP
+- l'adresse de la passerelle par défaut
+- l'adresse des serveurs DNS
+
+### Attribution d'adresse IP
+
+Un client souhaitant se connecter au réseau peut faire une demande de configuration auprès du serveur DHCP avec la commande *dhclient*.
+
+Le serveur est à même de satisfaire les demandes d'attribution d'adresses car il conserve à chaque instant une base de données des adresses disponibles.
+Il attribue une adresse au client en fonction du réseau auquel il appartient.
+Lors de la déconnexion d'un client, l'adresse qu'il utilisait est rajoutée à la base de données des adresses et est donc prête à être remise en service.
+
+DHCP dispose de trois différents mécanismes pour allouer des adresses IP
+
+#### Allocation dynamique
+Les adresses IP sont assignées pour une durée limitée.
+
+#### Allocation automatique
+Une adresse IP est associée à un client d'une manière permanente. Le serveur conserve une table des associations entre clients et adresses, permettant ainsi d'assigner à un client l'adresse qu'il a déjà eu par le passé.
+
+#### Allocation manuelle/statique
+L'administrateur réseau établit manuellement une correspondance entre les adresses MAC des clients et l'adresse IP leur étant attribuée.
+
+
+### Sources
+http://cisco.goffinet.org/s1/dhcp#.WL6VZ3qTRN0
+https://www.slideshare.net/truptikini/dhcp-presentation-22195996
+https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol
