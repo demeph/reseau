@@ -67,4 +67,12 @@ intrus:
 13:32:23.484471 IP 145.12.0.42.3082 > 85.37.17.55.domain: 47512+ PTR? 3.0.0.10.in-addr.arpa. (39)
 13:32:26.511903 IP 145.12.0.53 > 145.12.0.42: ICMP host 85.37.17.55 unreachable, length 75
 
+iptables -N blockEth2
+iptables -A Forward blockEth2 -i eth2 -j DROP
+iptables -A FORWARD -j blockEth2
+
+iptables -N AccesNet
+iptables -A AccesNet -o eth0 -j ACCEPT
+iptables -A AccesNet -o eth1 -j ACCEPT
+
 
