@@ -1,3 +1,7 @@
+set xrang [-0.5:17]
+set yrang [-2:2]
+set samples 1000
+
 S1(x) = (x>=0 && x<1)?1:0
 S2(x) = (x>=2 && x<4)?1:0
 S3(x) = (x>=6 && x<7)?1:0
@@ -5,10 +9,30 @@ S4(x) = (x>=8 && x<11)?1:0
 S5(x) = (x>=12 && x<13)?1:0
 S6(x) = (x>=14 && x<16)?1:0
 S(x) = S1(x)+S2(x)+S3(x)+S4(x)+S5(x)+S6(x)
-set xtics -1,1,17
-set ytics -1,1,2
-plot [-0.5:16.5][-0.5:1.5] S(x)
+plot S(x)
+
+coomenraire : S(x) = carre(x)
 
 pi = 3.14159265358979
-p(x) = 1*sin((pi/2)*x)
-m(x) = sin((pi/2*x+(1-S(x)))
+bp = 2
+p(x) = 1*sin(2*pi*bp*x)
+m(x) = sin(2*pi*bp*x+(1-S(x))*pi)
+d(x)=m(x)*p(x)
+
+rcarre(x) = (d(x)>0)?1:0
+plot rcarre(x),carre(x)
+
+hf = 100
+B(x) = sin(hf*x)
+BM(x) = B(x)+m(x)
+plot BM(x)
+
+BDD(x)= p(x)*BM(x)
+bcarre(x) = (BDD(x)>0)?1:0
+plot bcarre
+
+N = 50
+moyen(a,b) = 1.0+sum[t=0:N]BDD(a+1.0*(b-a)*t)/N))
+
+BDDmoyen(x) = sum[t=0:15](x>=a && x<(a+1)?moyenne(a,a+1):a)
+plot BDDMoyen
