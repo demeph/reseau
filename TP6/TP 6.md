@@ -103,3 +103,4 @@ iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 145.12.0.42
 
 
 
+Commentaire : je vais ajouter demain les captures
