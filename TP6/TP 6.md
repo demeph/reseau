@@ -4,7 +4,7 @@
 
 ### Configuration
 
-Dans la partie interface de marionnet, on definit en dur les adresses ip de chaque machine qu'on utilise dans ce tp. Les addresses des machines sont suivant:
+Dans la partie interface de marionnet, on definit en dur les adresses ip de chaque machine qu'on utilise dans ce tp. Les addresses des machines sont les suivantes :
 
 | machine | reseau Local | adresse          |
 | ------- | ------------ | ---------------- |
@@ -13,37 +13,37 @@ Dans la partie interface de marionnet, on definit en dur les adresses ip de chaq
 | 3       | $LAN_2$      | 10.0.0.3/8       |
 | 4       | $LAN_2$      | 10.0.0.4/8       |
 | routeur | $LAN_1$      | 192.168.1.254/24 |
-|         | $LAN_2$      | 10.255.255.254/8 |
-|         | $CAN_1$      | 145.12.0.53/16   |
+| routeur | $LAN_2$      | 10.255.255.254/8 |
+| routeur | $CAN_1$      | 145.12.0.53/16   |
 | intrus  | $CAN_1$      | 145.12.0.42/16   |
 
-Sur la machine *Routeur*, on autorise la passerelle, en tapant la commande suivante :
+Sur la machine *routeur*, on autorise la passerelle, en tapant la commande suivante :
 
 ```bash
 echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
-Pour sur les machines de $LAN_1$, on utilise la commande pour utliser le routeur comme passerelle:
+Pour sur les machines de $LAN_1$, on utilise la commande suivante pour utliser le routeur comme passerelle:
 
 ```bash
 route add -net default gw 192.168.1.254
 ```
 
-Pour sur les machines de $LAN_2$, on utilise la commande pour utliser le routeur comme passerelle:
+Pour sur les machines de $LAN_2$, on utilise la commande suivante pour utliser le routeur comme passerelle:
 
 ```bash
 route add -net default gw 10.255.255.254
 ```
 
-Pour sur les machines de $CAN_1$, on utilise la commande pour utliser le routeur comme passerelle:
+Pour sur les machines de $CAN_1$, on utilise la commande suivante pour utliser le routeur comme passerelle:
 
 ```bash
 route add -net default gw 145.13.0.53
 ```
 
-### Teste
+### Test
 
-- test ping : m1 $\rightarrow$ intrus
+- test ping m1 $\rightarrow$ intrus
 
 ```
 
@@ -58,7 +58,7 @@ PING 145.12.0.42 (145.12.0.42) 56(84) bytes of data.
 
 ```
 
-- capture des trams de tcpdump sur *intrus*:
+- capture des trames de tcpdump sur *intrus* :
 
 ```
 13:22:28.590864 arp who-has 145.12.0.42 tell 145.12.0.53
@@ -79,9 +79,9 @@ PING 145.12.0.42 (145.12.0.42) 56(84) bytes of data.
 
 ## Filtrage & SNAT
 
-Tous les commandes decrits dans cette section sont réalisées sur la machine *routeur* :
+Toutes les commandes décrites dans cette section sont réalisées sur la machine *routeur* :
 
-1. Pour blocker tous les entrées entrante dans le reseau a partir de l'intrus, on utilise les commades suivantes :
+1. Pour bloquer toutes les données entrant dans le réseau à partir de l'intrus, on utilise les commandes suivantes :
 
 ```bash
 iptables -N blockEth2
@@ -89,13 +89,13 @@ iptables -A blockEth2 -i eth2 -j DROP
 iptables -A FORWARD -j blockEth2
 ```
 
-2. Ensuite on autorise à l'intrus de communiquer seulement avec les machines deja connus
+2. Ensuite on autorise à l'intrus de communiquer seulement avec les machines déjà connectées
 
 ```bash
 iptables -A blockEth2 -m state --state ESTABLISHED -j ACCEPT
 ```
 
-3. Après on modifie les parametres, tel que l*'intrus* aura toujours l'impression qu'elle communique avec le routeur
+3. On modifie par la suite les paramètres, de sorte à ce que l*'intrus* aura toujours l'impression de communiquer avec le *routeur*
 
 ```bash
 iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 145.12.0.42
