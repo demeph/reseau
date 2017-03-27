@@ -38,7 +38,7 @@ route add -net default gw 10.255.255.254
 Pour sur les machines de $CAN_1$, on utilise la commande suivante pour utliser le routeur comme passerelle:
 
 ```bash
-route add -net default gw 145.13.0.53
+route add -net default gw 145.12.0.53
 ```
 
 ### Test
@@ -95,12 +95,70 @@ iptables -A FORWARD -j blockEth2
 iptables -A blockEth2 -m state --state ESTABLISHED -j ACCEPT
 ```
 
+capture des trames :
+
+- de m1 $\rightarrow$ intrus en utilisant *tcpdump* sur intrus
+
+```
+22:30:22 IP 192.168.1.1 > 145.12.0.42: ICMP echo request,id 22027, seq 1,length 64
+22:30:22 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027,  seq 1,length 64
+22:30:23 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 2, length 64
+22:30:23 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027, seq 2, length 64
+22:30:24 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 3, length 64
+22:30:24 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027, seq 3, length 64
+22:30:25 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 4, length 64
+22:30:25 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027, seq 4, length 64
+22:30:26 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 5, length 64
+22:30:26 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027, seq 5, length 64
+22:30:27 arp who-has 145.12.0.42 tell 145.12.0.53
+22:30:27 arp reply 145.12.0.42 is-at 02:04:06:6e:10:d5 (oui Unknown)
+22:30:27 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 6, length 64
+22:30:27 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027, seq 6, length 64
+22:30:28 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 7, length 64
+22:30:28 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027, seq 7, length 64
+```
+
+- voicie les trames capturés sur m2
+
+```
+22:30:22 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 1, length 64
+22:30:23 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 2, length 64   
+22:30:24 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 3, length 64
+22:30:25 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 4, length 64
+22:30:26 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 5, length 64
+22:30:27 arp who-has 192.168.1.254 tell 192.168.1.1
+22:30:27 arp reply 192.168.1.254 is-at 02:04:06:3b:03:04 (oui Unknown)
+22:30:27 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 6, length 64
+22:30:28 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 7, length 64
+```
+
+on remarque que sur la chaine 2 on voit que les requets du protocole *ICMP*, qui est tout a fait logique car la commande *iptables* qu'on utiise les paquets peuvent etre echangés qu'avec les machine deja connecté
+
 3. On modifie par la suite les paramètres, de sorte à ce que l*'intrus* aura toujours l'impression de communiquer avec le *routeur*
 
 ```bash
-iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 145.12.0.42
+iptables -t nat -A POSTROUTING -o eth2 -j SNAT --to 145.12.0.53
 ```
 
+- trame capture sur la machne *intrus* en utilisant *tcpdump:*
 
+  *m1* $\rightarrow$ *intrus*
 
-Commentaire : je vais ajouter demain les captures
+```
+22:43:03 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 1, length 64
+22:43:24 IP 145.12.0.42 > 145.12.0.53: ICMP echo reply, id 35851, seq 1, length 64
+22:43:04 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 2, length 64
+22:43:04 IP 145.12.0.42 > 145.12.0.53: ICMP echo reply, id 35851, seq 2, length 64
+22:43:05 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 3, length 64
+22:43:05 IP 145.12.0.42 > 145.12.0.53: ICMP echo reply, id 35851, seq 3, length 64
+22:43:06 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 4, length 64
+22:43:06 IP 145.12.0.42 > 145.12.0.53: ICMP echo reply, id 35851, seq 4, length 64
+22:43:07 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 5, length 64
+22:43:07 IP 145.12.0.42 > 145.12.0.53: ICMP echo reply, id 35851, seq 5, length 64
+22:43:08 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 6, length 64
+22:43:08 IP 145.12.0.42 > 145.12.0.53: ICMP echo reply, id 35851, seq 6, length 64
+22:43:09 IP 145.12.0.53 > 145.12.0.42: ICMP net 10.10.0.10 unreachable, length 78
+22:43:09 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 7, length 64
+22:43:09 IP 145.12.0.42 > 145.12.0.53: ICMP echo reply, id 35851, seq 7, length 64
+```
+
