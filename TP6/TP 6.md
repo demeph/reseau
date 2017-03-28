@@ -4,7 +4,7 @@
 
 ### Configuration
 
-Dans la partie interface de marionnet, on definit en dur les adresses ip de chaque machine qu'on utilise dans ce tp. Les addresses des machines sont les suivantes :
+Dans la partie interface de marionnet, on définit en dur les adresses ip de chaque machine qu'on utilise dans ce tp. Les adresses des machines sont les suivantes :
 
 | machine | reseau Local | adresse          |
 | ------- | ------------ | ---------------- |
@@ -23,19 +23,19 @@ Sur la machine *routeur*, on autorise la passerelle, en tapant la commande suiva
 echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
-Pour sur les machines de $LAN_1$, on utilise la commande suivante pour utliser le routeur comme passerelle:
+Sur les machines de $LAN_1$, on utilise la commande suivante pour utliser le routeur comme passerelle :
 
 ```bash
 route add -net default gw 192.168.1.254
 ```
 
-Pour sur les machines de $LAN_2$, on utilise la commande suivante pour utliser le routeur comme passerelle:
+Sur les machines de $LAN_2$, on utilise la commande suivante pour utliser le routeur comme passerelle :
 
 ```bash
 route add -net default gw 10.255.255.254
 ```
 
-Pour sur les machines de $CAN_1$, on utilise la commande suivante pour utliser le routeur comme passerelle:
+Sur les machines de $CAN_1$, on utilise la commande suivante pour utliser le routeur comme passerelle :
 
 ```bash
 route add -net default gw 145.12.0.53
@@ -43,7 +43,7 @@ route add -net default gw 145.12.0.53
 
 ### Test
 
-- test ping m1 $\rightarrow$ intrus
+- test ping *m1* $\rightarrow$ *intrus* :
 
 ```
 
@@ -81,7 +81,7 @@ PING 145.12.0.42 (145.12.0.42) 56(84) bytes of data.
 
 Toutes les commandes décrites dans cette section sont réalisées sur la machine *routeur* :
 
-1. Pour bloquer toutes les données entrant dans le réseau à partir de l'intrus, on utilise les commandes suivantes :
+1. Pour bloquer toutes les données entrant dans le réseau à partir de l'*intrus*, on utilise les commandes suivantes :
 
 ```bash
 iptables -N blockEth2
@@ -89,7 +89,7 @@ iptables -A blockEth2 -i eth2 -j DROP
 iptables -A FORWARD -j blockEth2
 ```
 
-2. Ensuite on autorise à l'intrus de communiquer seulement avec les machines déjà connectées
+2. Ensuite on autorise l'*intrus* à communiquer seulement avec les machines déjà connectées
 
 ```bash
 iptables -A blockEth2 -m state --state ESTABLISHED -j ACCEPT
@@ -97,7 +97,7 @@ iptables -A blockEth2 -m state --state ESTABLISHED -j ACCEPT
 
 capture des trames :
 
-- de m1 $\rightarrow$ intrus en utilisant *tcpdump* sur intrus
+- *m1* $\rightarrow$ *intrus* en utilisant *tcpdump* sur *intrus* :
 
 ```
 22:30:22 IP 192.168.1.1 > 145.12.0.42: ICMP echo request,id 22027, seq 1,length 64
@@ -118,7 +118,7 @@ capture des trames :
 22:30:28 IP 145.12.0.42 > 192.168.1.1: ICMP echo reply, id 22027, seq 7, length 64
 ```
 
-- voicie les trames capturés sur m2
+- *m1* $\rightarrow$ *intrus* en utilisant *tcpdump* sur *m2* :
 
 ```
 22:30:22 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 1, length 64
@@ -132,17 +132,17 @@ capture des trames :
 22:30:28 IP 192.168.1.1 > 145.12.0.42: ICMP echo request, id 22027, seq 7, length 64
 ```
 
-on remarque que sur la chaine 2 on voit que les requets du protocole *ICMP*, qui est tout a fait logique car la commande *iptables* qu'on utiise les paquets peuvent etre echangés qu'avec les machine deja connecté
+On ne voit que les requêtes du protocole *ICMP* sur *m2*, ce qui est tout à fait logique car avec les chaines *iptables* que nous utilisons, les paquets ne peuvent être echangés qu'avec les machine déjà connectées.
 
-3. On modifie par la suite les paramètres, de sorte à ce que l*'intrus* aura toujours l'impression de communiquer avec le *routeur*
+3. On modifie par la suite les paramètres, de sorte à ce que l'*intrus* aura toujours l'impression de communiquer avec le *routeur*
 
 ```bash
 iptables -t nat -A POSTROUTING -o eth2 -j SNAT --to 145.12.0.53
 ```
 
-- trame capture sur la machne *intrus* en utilisant *tcpdump:*
+- capture de trames sur *intrus* en utilisant *tcpdump:*
 
-  *m1* $\rightarrow$ *intrus*
+  *m1* $\rightarrow$ *intrus* :
 
 ```
 22:43:03 IP 145.12.0.53 > 145.12.0.42: ICMP echo request, id 35851, seq 1, length 64
